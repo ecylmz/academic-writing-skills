@@ -1,0 +1,79 @@
+name: Upstream Watch
+
+on:
+  schedule:
+    # First day of every month, 07:00 UTC.
+    - cron: "0 7 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  check-upstream:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check upstream repositories
+        id: upstream
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set +e
+          python tools/check_upstream_updates.py \
+            --sources .upstream/sources.json \
+            --snapshot .upstream/snapshots/latest.json \
+            --report .upstream/reports/upstream-report.md \
+            --state .upstream/reports/upstream-state.json
+          status=$?
+          echo "script_status=$status" >> "$GITHUB_OUTPUT"
+          echo "has_relevant_changes=$(python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('.upstream/reports/upstream-state.json')
+          data = json.loads(p.read_text()) if p.exists() else {}
+          print(str(data.get('has_relevant_changes', False)).lower())
+          PY
+          )" >> "$GITHUB_OUTPUT"
+          echo "has_errors=$(python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('.upstream/reports/upstream-state.json')
+          data = json.loads(p.read_text()) if p.exists() else {}
+          print(str(data.get('has_errors', False)).lower())
+          PY
+          )" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Commit updated upstream snapshot and report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .upstream/snapshots/latest.json .upstream/reports/upstream-report.md .upstream/reports/upstream-state.json
+          if git diff --cached --quiet; then
+            echo "No upstream tracking changes to commit."
+          else
+            git commit -m "chore: update upstream tracking report"
+            git push
+          fi
+
+      - name: Create tracking issue for relevant upstream changes
+        if: steps.upstream.outputs.has_relevant_changes == 'true' || steps.upstream.outputs.has_errors == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('.upstream/reports/upstream-report.md', 'utf8');
+            const now = new Date().toISOString().slice(0, 10);
+            const title = `Monthly upstream skill update report — ${now}`;
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body: report,
+              labels: ['upstream', 'skills', 'maintenance']
+            });

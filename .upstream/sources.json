@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "generated_for": "academic_writing_skill_suite",
+  "tracking_policy": "monthly_report_human_review",
+  "sources": [
+    {
+      "name": "agent-style",
+      "repo": "yzhao062/agent-style",
+      "branch": "main",
+      "homepage": "https://github.com/yzhao062/agent-style",
+      "watch_paths": [
+        "RULES.md",
+        "SOURCES.md",
+        "skills/style-review/",
+        "packages/pypi/agent_style/review/",
+        "packages/pypi/agent_style/data/skills/style-review/",
+        "packages/npm/data/skills/style-review/",
+        "CHANGELOG.md"
+      ],
+      "local_targets": [
+        ".agents/skills/academic-style-review-en/",
+        ".agents/skills/turkce-akademik-style-review/",
+        ".agents/skills/_shared/references/agent-neutral-skill-principles.md"
+      ],
+      "update_policy": "review-carefully",
+      "risk_level": "high",
+      "reason": "Style rules and executable review logic may change. Port ideas selectively; do not auto-merge."
+    },
+    {
+      "name": "research-paper-writing-skills",
+      "repo": "Master-cai/Research-Paper-Writing-Skills",
+      "branch": "main",
+      "homepage": "https://github.com/Master-cai/Research-Paper-Writing-Skills",
+      "watch_paths": [
+        "research-paper-writing/SKILL.md",
+        "research-paper-writing/references/",
+        "research-paper-writing/templates/",
+        "README.md"
+      ],
+      "local_targets": [
+        ".agents/skills/makale-yazimi-en/",
+        ".agents/skills/makale-denetim-en/",
+        ".agents/skills/claim-evidence-audit/"
+      ],
+      "update_policy": "selective-port",
+      "risk_level": "medium",
+      "reason": "Section-level paper writing guides and templates may improve. Port structure and checklists manually."
+    },
+    {
+      "name": "academic-research-skills",
+      "repo": "Imbad0202/academic-research-skills",
+      "branch": "main",
+      "homepage": "https://github.com/Imbad0202/academic-research-skills",
+      "watch_paths": [
+        "academic-paper/",
+        "academic-paper-reviewer/",
+        "academic-pipeline/",
+        "deep-research/",
+        "shared/",
+        "docs/ARCHITECTURE.md",
+        "README.md",
+        "CHANGELOG.md"
+      ],
+      "local_targets": [
+        ".agents/skills/akademik-yazim-suite/",
+        ".agents/skills/tez-yazimi-tr/",
+        ".agents/skills/tez-denetim-tr/",
+        ".agents/skills/tez-latex-format-tr/",
+        ".agents/skills/citation-integrity-audit/",
+        ".agents/skills/claim-evidence-audit/"
+      ],
+      "update_policy": "selective-port",
+      "risk_level": "high",
+      "reason": "Large academic writing pipeline. Track architecture, integrity protocols, review gates, and shared schemas; adapt to Turkish thesis workflow manually."
+    }
+  ]
+}

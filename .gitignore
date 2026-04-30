@@ -1,0 +1,170 @@
+# macOS / Windows / Linux system files
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.Trashes
+.fseventsd
+.Spotlight-V100
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.bak
+*.tmp
+*.temp
+
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+env/
+ENV/
+
+# Node / package manager artifacts, in case helper tools are added later
+node_modules/
+.npm/
+.pnpm-store/
+.yarn/
+yarn-error.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.local
+*.secret
+secrets/
+.credentials/
+*.pem
+*.key
+
+# Generated archives and release packages
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+
+# Generated document outputs
+*.pdf
+*.docx
+*.odt
+*.rtf
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.brf
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+*.nav
+*.snm
+*.vrb
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.loa
+*.lol
+
+# Keep LaTeX source files and bibliography files
+!*.tex
+!*.cls
+!*.sty
+!*.bib
+!*.bst
+
+# Generated validation / temporary reports
+tmp/
+temp/
+.cache/
+.cache-*/
+reports/generated/
+validation-output/
+*.validated.json
+
+# Upstream tracking runtime files
+# Keep source manifests, baseline snapshots, and curated reports.
+# Ignore transient API responses and scratch outputs.
+.upstream/cache/
+.upstream/tmp/
+.upstream/raw/
+.upstream/**/*.tmp
+.upstream/**/*.bak
+
+# Keep intended upstream files
+!.upstream/
+!.upstream/README.md
+!.upstream/sources.json
+!.upstream/sources.yaml
+!.upstream/snapshots/
+!.upstream/snapshots/latest.json
+!.upstream/reports/
+!.upstream/reports/upstream-report.md
+!.upstream/reports/upstream-state.json
+
+# Agent runtime scratch files
+.agents/tmp/
+.agents/cache/
+.agents/logs/
+.agents/**/*.tmp
+.agents/**/*.bak
+
+# Keep skill definitions
+!.agents/
+!.agents/skills/
+!.agents/skills/**
+
+# Logs
+*.log
+logs/
+
+# Coverage / benchmark scratch outputs
+coverage/
+bench-output/
+benchmark-output/
+
+# Local packaged copies of this project
+academic_writing_skill_suite*.zip
+academic-writing-skills*.zip
+
+# Optional local vendor checkouts
+# If you later clone upstream repositories locally, keep them out of git.
+vendor/
+.external/
+third_party/
+
+# GitHub Actions local runner state
+_act/

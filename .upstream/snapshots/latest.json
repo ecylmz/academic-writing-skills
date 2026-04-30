@@ -1,0 +1,5 @@
+{
+  "schema_version": "1.0",
+  "note": "Initial snapshot. The first scheduled run will populate last_seen_commit values from GitHub.",
+  "repos": {}
+}

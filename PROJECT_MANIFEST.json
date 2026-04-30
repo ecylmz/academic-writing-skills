@@ -1,0 +1,33 @@
+{
+  "name": "academic_writing_skill_suite",
+  "version": "0.2.0",
+  "description": "Agent-neutral modular skill suite for Turkish thesis writing, English research paper writing, academic style review, claim-evidence audit, citation integrity audit, OMU LaTeX thesis formatting, and upstream maintenance tracking.",
+  "skill_count": 10,
+  "skills": [
+    "academic-style-review-en",
+    "akademik-yazim-suite",
+    "citation-integrity-audit",
+    "claim-evidence-audit",
+    "makale-denetim-en",
+    "makale-yazimi-en",
+    "tez-denetim-tr",
+    "tez-latex-format-tr",
+    "tez-yazimi-tr",
+    "turkce-akademik-style-review"
+  ],
+  "file_count": 64,
+  "major_components": [
+    ".agents/skills",
+    "AGENTS.md",
+    ".upstream",
+    ".github/workflows/upstream-watch.yml",
+    "tools/check_skill_suite.py",
+    "tools/check_upstream_updates.py"
+  ],
+  "upstream_tracking": {
+    "enabled": true,
+    "manifest": ".upstream/sources.json",
+    "workflow": ".github/workflows/upstream-watch.yml",
+    "policy": "monthly report, human-reviewed selective porting; no automatic merge"
+  }
+}

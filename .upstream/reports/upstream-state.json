@@ -1,0 +1,8 @@
+{
+  "run_at": null,
+  "relevant_count": 0,
+  "has_relevant_changes": false,
+  "error_count": 0,
+  "has_errors": false,
+  "report": ".upstream/reports/upstream-report.md"
+}
