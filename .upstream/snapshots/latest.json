@@ -1,5 +1,28 @@
 {
   "schema_version": "1.0",
   "note": "Initial snapshot. The first scheduled run will populate last_seen_commit values from GitHub.",
-  "repos": {}
+  "repos": {
+    "yzhao062/agent-style": {
+      "name": "agent-style",
+      "branch": "main",
+      "last_seen_commit": "74bda6cc647f744da9cad856687903827afeb441",
+      "last_seen_commit_date": "2026-04-29T04:18:59Z",
+      "last_checked_at": "2026-05-01T08:58:47.229852+00:00"
+    },
+    "Master-cai/Research-Paper-Writing-Skills": {
+      "name": "research-paper-writing-skills",
+      "branch": "main",
+      "last_seen_commit": "9ee5eddc10068cc52590b3a68a827d3a387f5af9",
+      "last_seen_commit_date": "2026-04-23T01:20:19Z",
+      "last_checked_at": "2026-05-01T08:58:47.229852+00:00"
+    },
+    "Imbad0202/academic-research-skills": {
+      "name": "academic-research-skills",
+      "branch": "main",
+      "last_seen_commit": "b4fbffdcbd8bdacbdef877dd22e17c95f5c9d81e",
+      "last_seen_commit_date": "2026-04-30T06:27:54Z",
+      "last_checked_at": "2026-05-01T08:58:47.229852+00:00"
+    }
+  },
+  "last_checked_at": "2026-05-01T08:58:47.229852+00:00"
 }
