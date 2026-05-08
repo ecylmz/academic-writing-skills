@@ -1,40 +1,21 @@
 # Source Notes
 
-Bu paket doğrudan kopyalanmış bir upstream dağıtımı değildir. Aşağıdaki projelerdeki fikirler sentezlenerek, tez ve makale yazımı için daha sade ve agent-bağımsız bir yapıya dönüştürülmüştür.
+This package is not a directly copied upstream distribution. It synthesizes ideas from the projects below and reshapes them into a smaller, agent-neutral suite for thesis and article writing.
 
-## İncelenen projeler
+## Reviewed Sources
 
-- `yzhao062/agent-style`: teknik ve akademik metinlerde okuyucu bilgisi, somut dil, gereksiz sözcükleri azaltma, claim calibration, citation discipline ve AI-output kalıplarını azaltma ilkeleri.
-- `Master-cai/Research-Paper-Writing-Skills`: abstract/introduction/method/experiment gibi makale bölümleri için story-first writing, reverse outlining, paragraph role ve claim-evidence map yaklaşımı.
-- `Imbad0202/academic-research-skills`: akademik pipeline, integrity gate, citation check, reviewer simulation, style calibration ve writing quality check kavramları.
+- `yzhao062/agent-style`: reader awareness, concrete language, reduced unnecessary wording, claim calibration, citation discipline, and reduced AI-output patterns.
+- `Master-cai/Research-Paper-Writing-Skills`: story-first writing, reverse outlining, paragraph roles, and claim-evidence maps for article sections.
+- `Imbad0202/academic-research-skills`: academic workflow concepts including integrity gates, citation checks, reviewer simulation, style calibration, and writing quality checks.
 
-## OMÜ tez kuralları
+## OMU Thesis Rules
 
-Tez skill'leri, Ondokuz Mayıs Üniversitesi Lisansüstü Eğitim Enstitüsü'nün resmi tez yazım sayfasında yayımlanan tez yazım kılavuzundaki biçim ve bölüm kurallarına göre hazırlanmıştır. LaTeX ZIP dosyası bu ortamda açılamadığı için gerçek şablon komutları birebir çıkarılamamıştır. Bunun yerine:
+The thesis skills are based on formal rules published by Ondokuz Mayis University Graduate Education Institute. The official LaTeX ZIP could not be inspected in this environment, so this suite does not claim to preserve exact official template commands. Instead, agents must inspect local `.cls`, `.sty`, main `.tex`, `.bib`, and example files before proposing LaTeX edits.
 
-1. Resmi kılavuzdaki biçim kuralları `tez-latex-format-tr/references/omu-tez-kurallari.md` dosyasına aktarıldı.
-2. Skill'lere, yerel LaTeX şablonu mevcutsa önce `.cls`, `.sty`, ana `.tex` ve örnek dosyaları okuma kuralı eklendi.
-3. Agent'ın OMÜ şablonunda tanımlı komutları yeniden yazmaması, mevcut komutları ve dosya düzenini koruması istendi.
+## Scope Limit
 
-## Kullanım sınırı
-
-Bu skill'ler akademik yazımı, tutarlılığı ve denetimi destekler; bilimsel kararın, yöntemsel sorumluluğun ve son metin onayının yerini almaz. Özellikle tez ve makalede kullanılan deney sonuçları, istatistikler, kaynaklar ve etik beyanlar araştırmacı tarafından doğrulanmalıdır.
+These skills support academic writing, consistency, and review. They do not replace scientific judgment, methodological responsibility, supervisor approval, committee requirements, or final author verification. Experimental results, statistics, sources, and ethics statements must be verified by the researcher.
 
 ## Upstream Tracking Policy
 
-This suite now includes a lightweight upstream tracking system under `.upstream/` and `.github/workflows/upstream-watch.yml`.
-
-Tracked sources:
-
-1. `yzhao062/agent-style`
-2. `Master-cai/Research-Paper-Writing-Skills`
-3. `Imbad0202/academic-research-skills`
-
-The tracking system reports relevant upstream changes but does not merge or overwrite local files. All updates must be reviewed manually because this suite contains Turkish thesis writing adaptations, OMÜ thesis-format references, and computer science / empirical software engineering aware academic writing rules that should remain usable across fields.
-
-When upstream content is ported into this suite, update this file with a short note describing:
-
-- upstream repository and file consulted,
-- local file changed,
-- whether the change was translated, summarized, or structurally adapted,
-- date of the maintenance decision.
+Tracked sources are `yzhao062/agent-style`, `Master-cai/Research-Paper-Writing-Skills`, and `Imbad0202/academic-research-skills`. Reports do not merge or overwrite local files. When upstream content is ported, update this file with the source, local file changed, adaptation type, and decision date.

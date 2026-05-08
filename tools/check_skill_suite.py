@@ -24,7 +24,6 @@ expected = [skill for skills in expected_by_language.values() for skill in skill
 required_project_files = [
     "AGENTS.md",
     "README.md",
-    "INSTALL.md",
     "SOURCE_NOTES.md",
     "PROJECT_MANIFEST.json",
     ".upstream/README.md",

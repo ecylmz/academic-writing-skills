@@ -1,25 +1,25 @@
 # Upstream Tracking
 
-Bu dizin, bu skill suite'in beslendiği üç upstream projedeki değişiklikleri takip etmek için kullanılır.
+This directory tracks changes in upstream projects that informed this skill suite.
 
-## Dosyalar
+## Files
 
-- `sources.json`: Makine tarafından okunan takip manifesti.
-- `sources.yaml`: İnsan tarafından okunabilir manifest kopyası.
-- `snapshots/latest.json`: Son görülen commit kayıtları.
-- `reports/`: Aylık fark raporları.
+- `sources.json`: machine-readable tracking manifest.
+- `sources.yaml`: human-readable manifest copy.
+- `snapshots/latest.json`: last seen commit records.
+- `reports/`: generated monthly diff reports.
 
-## Politika
+## Policy
 
-Bu proje upstream depoları doğrudan otomatik olarak içeri almaz. Her değişiklik önce raporlanır, sonra insan kararıyla işlenir.
+This project does not automatically import upstream repositories. Each change is reported first and then handled by a human maintenance decision.
 
-Karar türleri:
+Decision types:
 
-- `ignore`: Değişiklik bu projeyi etkilemiyor.
-- `port`: Fikir, kontrol listesi veya şablon yerel skill'e uyarlanacak.
-- `vendor`: Upstream dosya referans olarak ayrı tutulacak.
-- `defer`: Değişiklik sonraki bakım turunda yeniden değerlendirilecek.
+- `ignore`: the change does not affect this project.
+- `port`: adapt an idea, checklist, or template into a local skill.
+- `vendor`: keep an upstream file separately as a reference.
+- `defer`: reconsider the change in a later maintenance cycle.
 
-## Neden otomatik merge yok?
+## Why There Is No Automatic Merge
 
-Bu suite, upstream projelerin birebir kopyası değildir. Türkçe tez yazımı, OMÜ tez şablonu, yazılım mühendisliği makaleleri ve kullanıcıya özgü akademik iş akışı için uyarlanmıştır. Upstream içerik doğrudan merge edilirse yerel terminoloji, Türkçe akademik üslup ve tez formatı kuralları bozulabilir.
+This suite is adapted for Turkish thesis writing, OMU thesis templates, software engineering papers, and user-specific academic workflows. Direct upstream merges can break local terminology, Turkish academic style rules, and thesis-format assumptions.

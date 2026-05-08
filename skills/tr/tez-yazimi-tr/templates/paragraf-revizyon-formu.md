@@ -1,21 +1,21 @@
-# Paragraf Revizyon Formu
+# Paragraph Revision Form
 
-## Orijinal paragraf
+## Original Paragraph
 
-## Paragraf rolü
+## Paragraph Role
 
-## Ana mesaj
+## Main Message
 
-## Sorunlar
+## Issues
 
-- [ ] Ana mesaj belirsiz
-- [ ] Birden fazla mesaj var
-- [ ] Kanıtsız iddia var
-- [ ] Terim tutarsızlığı var
-- [ ] Çok uzun cümle var
-- [ ] Geçiş zayıf
-- [ ] Bölüm işlevine uymuyor
+- [ ] Main message is unclear
+- [ ] More than one message is present
+- [ ] Unsupported claim exists
+- [ ] Terminology is inconsistent
+- [ ] Sentence is too long
+- [ ] Transition is weak
+- [ ] Paragraph does not fit section function
 
-## Revize paragraf
+## Revised Paragraph
 
-## Revizyon gerekçesi
+## Revision Rationale

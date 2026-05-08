@@ -11,23 +11,23 @@ The suite is not a single monolithic prompt. Each skill has a short `SKILL.md`, 
 3. **Separate writing from verification.** Drafting skills improve structure and prose. Audit skills check claim-evidence alignment, citation integrity, and format compliance.
 4. **Use the narrowest relevant skill.** Do not load the whole suite when a section-specific skill is enough.
 5. **Treat Turkish thesis writing differently from English article writing.** Turkish thesis prose should be formal, clear, natural, and institutionally compliant; English article prose should follow international manuscript conventions.
-6. **Keep local adaptations.** This project adapts upstream academic-writing projects for Turkish thesis writing, OMÜ thesis formatting, and computer science / empirical software engineering aware research workflows without excluding other fields. Do not blindly overwrite local files with upstream content.
+6. **Keep local adaptations.** This project adapts upstream academic-writing projects for Turkish thesis writing, OMU thesis formatting, and computer science / empirical software engineering aware research workflows without excluding other fields. Do not blindly overwrite local files with upstream content.
 7. **Do not auto-merge upstream updates.** Use `.upstream/` reports to decide whether to ignore, port, vendor, or defer changes.
 
 ## Skill Selection Guide
 
 | User request | Use this skill |
 |---|---|
-| “Tez bölümümü yaz / düzenle” | `tez-yazimi-tr` |
-| “Tezimi jüri gözüyle değerlendir” | `tez-denetim-tr` |
-| “OMÜ LaTeX şablonuna göre kontrol et” | `tez-latex-format-tr` |
+| “Write/revise my thesis section” | `tez-yazimi-tr` |
+| “Evaluate my thesis like a committee member” | `tez-denetim-tr` |
+| “Check against the OMU LaTeX template” | `tez-latex-format-tr` |
 | “Write/revise an English paper section” | `makale-yazimi-en` |
 | “Review my English manuscript like a reviewer” | `makale-denetim-en` |
 | “Clean AI-like English academic prose” | `academic-style-review-en` |
-| “Türkçe akademik metni doğal ve akademik hale getir” | `turkce-akademik-style-review` |
-| “İddialar kanıtlarla uyumlu mu?” | `claim-evidence-audit` |
-| “Kaynakça ve atıfları kontrol et” | `citation-integrity-audit` |
-| “Hangi skill’i kullanmalıyım?” | `akademik-yazim-suite` |
+| “Make this Turkish academic text natural and formal” | `turkce-akademik-style-review` |
+| “Are the claims aligned with the evidence?” | `claim-evidence-audit` |
+| “Check bibliography and citations” | `citation-integrity-audit` |
+| “Which skill should I use?” | `akademik-yazim-suite` |
 
 ## Recommended Workflows
 
@@ -37,7 +37,7 @@ The suite is not a single monolithic prompt. Each skill has a short `SKILL.md`, 
 2. `claim-evidence-audit`: extract claims and check whether each claim is supported by thesis data or cited literature.
 3. `turkce-akademik-style-review`: remove artificial phrasing, vague praise, unnecessary meta-commentary, and translationese.
 4. `tez-denetim-tr`: evaluate the section from a thesis jury perspective.
-5. `tez-latex-format-tr`: check OMÜ thesis formatting and LaTeX template compliance.
+5. `tez-latex-format-tr`: check OMU thesis formatting and LaTeX template compliance.
 
 ### English Article Workflow
 
@@ -77,16 +77,16 @@ When auditing, return:
 3. Recommended fix.
 4. Whether the issue requires user-supplied evidence or can be fixed by rewriting.
 
-## LaTeX and OMÜ Thesis Rules
+## LaTeX and OMU Thesis Rules
 
 For thesis formatting tasks, first inspect the user's local LaTeX files if they exist. Prioritize actual project files over memory or generic rules:
 
 - `.cls`, `.sty`, `.tex`, `.bib`
 - `Makefile`, `latexmkrc`, `tectonic.toml`
 - existing chapter files
-- OMÜ thesis template files copied by the user
+- OMU thesis template files copied by the user
 
-If the actual OMÜ template is present, preserve its commands and document structure. Do not replace it with a generic template.
+If the actual OMU template is present, preserve its commands and document structure. Do not replace it with a generic template.
 
 ## Safety and Integrity Boundaries
 

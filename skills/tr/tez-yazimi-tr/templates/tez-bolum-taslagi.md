@@ -1,26 +1,26 @@
-# Tez Bölüm Taslağı
+# Thesis Section Outline
 
-## Bölüm adı
+## Section Name
 
-## Bölümün amacı
+## Section Purpose
 
-## Ana mesaj
+## Main Message
 
-## Araştırma sorusu ile ilişkisi
+## Relation to Research Question
 
-## Paragraf planı
+## Paragraph Plan
 
-| Paragraf | Rol | Ana mesaj | Gerekli kanıt | Not |
+| Paragraph | Role | Main Message | Required Evidence | Note |
 |---|---|---|---|---|
-| P1 | bağlam |  |  |  |
+| P1 | context |  |  |  |
 | P2 | problem |  |  |  |
-| P3 | boşluk |  |  |  |
-| P4 | yöntem / bulgu / yorum |  |  |  |
+| P3 | gap |  |  |  |
+| P4 | method / finding / interpretation |  |  |  |
 
-## Eksik materyaller
+## Missing Materials
 
-- [ ] Kaynak
-- [ ] Tablo/şekil
-- [ ] Deney sonucu
-- [ ] Yöntem ayrıntısı
-- [ ] Tanım veya kavramsal açıklama
+- [ ] Source
+- [ ] Table/figure
+- [ ] Experiment result
+- [ ] Method detail
+- [ ] Definition or conceptual explanation

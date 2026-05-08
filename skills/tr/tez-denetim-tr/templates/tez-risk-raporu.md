@@ -1,21 +1,18 @@
-# Tez Risk Raporu
+# Thesis Risk Report
 
-## Genel durum
+## Overall Status
 
-## Kritik riskler
+## Critical Risks
 
-| Öncelik | Bölüm | Risk | Kanıt | Önerilen işlem |
+| Priority | Section | Risk | Evidence | Recommended Action |
 |---|---|---|---|---|
 
-## Jüri soruları
+## Committee Questions
 
-| Soru | Neden gelebilir? | Hazırlık önerisi |
+| Question | Why It May Be Asked | Preparation Advice |
 |---|---|---|
 
-## Revizyon planı
+## Revision Plan
 
-| Aşama | İş | Beklenen çıktı |
+| Stage | Task | Expected Output |
 |---|---|---|
-| 1 |  |  |
-| 2 |  |  |
-| 3 |  |  |

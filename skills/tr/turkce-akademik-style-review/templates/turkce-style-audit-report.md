@@ -1,11 +1,11 @@
-# Türkçe Akademik Üslup Denetim Raporu
+# Turkish Academic Style Audit Report
 
-| Konum | Sorun türü | Özgün ifade | Önerilen ifade | Gerekçe |
+| Location | Issue Type | Original Expression | Suggested Expression | Rationale |
 |---|---|---|---|---|
 
-## İddia gücü denetimi
+## Claim Strength Check
 
-| İddia | Mevcut ifade | Kanıt gücü | Önerilen ifade |
+| Claim | Current Expression | Evidence Strength | Suggested Expression |
 |---|---|---|---|
 
-## Revize metin
+## Revised Text

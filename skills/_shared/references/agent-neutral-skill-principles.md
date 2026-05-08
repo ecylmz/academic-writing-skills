@@ -1,19 +1,19 @@
 # Agent-Neutral Skill Principles
 
-Bu suite belirli bir agent platformuna bağlı değildir. Skill dosyaları, çalıştırma komutları veya host-specific slash command varsayımları yerine görev, girdi, süreç ve çıktı sözleşmesi tanımlar.
+This suite is not tied to a specific agent platform. Skill files define task scope, inputs, process, and output contracts instead of assuming host-specific commands or slash-command behavior.
 
-## Genel ilkeler
+## General Rules
 
-1. Önce kullanıcının hedefini ve mevcut materyali belirle.
-2. Eksik materyal varsa bunu uydurma; `[MATERIAL GAP]` olarak işaretle.
-3. Revizyonlarda mevcut anlamı koru; yeni veri, yeni kaynak, yeni sonuç veya yeni deney icat etme.
-4. Her önemli iddiayı en az bir destek türüyle eşleştir: kaynak, deney sonucu, tablo/şekil, yöntem gerekçesi veya açık sınırlılık beyanı.
-5. LaTeX, Markdown, BibTeX ve kod bloklarının yapısını koru.
-6. Çıktıda gerekli olduğunda hem revize metin hem de denetim raporu ver.
+1. Identify the user's goal and available material first.
+2. Do not invent missing material; mark it as `[MATERIAL GAP]`.
+3. Preserve existing meaning during revisions; do not invent data, sources, results, or experiments.
+4. Match every important claim with at least one support type: source, experiment result, table/figure, method rationale, or explicit limitation.
+5. Preserve the structure of LaTeX, Markdown, BibTeX, and code blocks.
+6. When needed, return both the revised text and an audit report.
 
-## Dosya koruma kuralları
+## File Protection Rules
 
-- Kullanıcı açıkça istemedikçe kaynak dosyayı doğrudan değiştirme.
-- Revizyon önerisi veriyorsan önce farkları ve gerekçeyi bildir.
-- LaTeX komutlarını sadeleştirmek için silme; önce ne işe yaradığını belirle.
-- Atıf anahtarlarını değiştirme; bozuk görünüyorsa raporla.
+- Do not modify the user's source file directly unless explicitly asked.
+- If proposing a revision, explain the changes and rationale.
+- Do not delete LaTeX commands merely to simplify; identify what they do first.
+- Do not change citation keys; report them if they appear broken.

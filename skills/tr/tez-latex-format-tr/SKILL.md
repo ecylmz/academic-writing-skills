@@ -1,111 +1,56 @@
 ---
 name: tez-latex-format-tr
-description: OMÜ tez yazım kılavuzu ve kullanıcının yerel LaTeX şablonu ile uyumlu tez biçim kontrolü yapmak için kullanılır. Sayfa düzeni, başlıklar, numaralandırma, özet, tablo/şekil, denklem, kaynakça ve LaTeX komutları korunarak denetlenir.
+description: Use for OMU thesis-format and local LaTeX-template compliance checks. It reviews page layout, headings, numbering, abstracts, tables, figures, equations, bibliography, and LaTeX commands while preserving template structure.
 ---
 
-# Tez LaTeX Format TR
+# Turkish Thesis LaTeX Format
 
-Bu skill, tez metninin içerik kalitesinden çok biçim, LaTeX şablon uyumu ve OMÜ tez yazım kurallarıyla ilgilenir.
+This skill focuses on format, LaTeX template compliance, and OMU thesis rules rather than academic content quality.
 
-## Öncelik sırası
+## Priority Order
 
-1. Yerel LaTeX şablonu varsa önce onu oku.
-2. Şablonun tanımladığı komutları ve dosya yapısını koru.
-3. Kullanıcının tez projesindeki gerçek `.cls`, `.sty`, `.tex`, `.bib`, `Makefile` ve derleme ayarlarını genel bilgiden önce değerlendir.
-4. OMÜ tez yazım kılavuzundaki biçim kurallarını uygula.
-5. Şablon ile kılavuz arasında fark varsa kesin karar verme; farkı raporla.
-6. Kullanıcı istemedikçe ana `.tex` dosyasını yeniden yazma.
-7. İçerik iddiası, kaynak doğruluğu veya akademik kalite denetimi gerekiyorsa bunu `tez-denetim-tr`, `claim-evidence-audit` veya `citation-integrity-audit` için ayrı risk olarak işaretle.
+1. Read the local LaTeX template first when it exists.
+2. Preserve commands and file structure defined by the template.
+3. Inspect the user's real `.cls`, `.sty`, `.tex`, `.bib`, `Makefile`, and build settings before relying on generic guidance.
+4. Apply the OMU thesis-format guide summarized in `references/omu-tez-kurallari.md`.
+5. If the template and guide differ, report the difference instead of making a definitive institutional claim.
+6. Do not rewrite the main `.tex` file unless the user asks.
 
-## Yerel şablon keşfi
+## Local Template Discovery
 
-Çalışmaya başlamadan önce proje dizininde şunları ara:
+Search for main `.tex` files, `.cls`, `.sty`, `.bib`, build files, chapter folders, and figure/table folders. Report the main file, class/style files, bibliography file, chapter files, build method, and template-specific commands.
 
-- Ana dosya: `main.tex`, `tez.tex`, `thesis.tex`, `omu_tez.tex` veya benzeri.
-- Sınıf/stil: `.cls`, `.sty`.
-- Bibliography: `.bib`.
-- Derleme dosyaları: `Makefile`, `.latexmkrc`, `latexmkrc`.
-- Bölüm dosyaları: `chapters/`, `sections/`, `bolumler/`.
-- Şekil ve tablo dizinleri: `figures/`, `tables/`, `images/`.
+## Review Flow
 
-Bulunanları raporla:
+1. Discover LaTeX files.
+2. Extract template commands.
+3. Compare against OMU rules.
+4. Classify issues as `format-critical`, `template-risk`, `latex-error`, `consistency`, or `style`.
+5. Provide safe fixes; if requested, provide patches.
 
-```text
-Ana dosya:
-Sınıf/stil dosyaları:
-Kaynakça dosyası:
-Bölüm dosyaları:
-Derleme yöntemi:
-Şablona özgü komutlar:
-```
-
-## OMÜ biçim kuralları
-
-Bu skill, `references/omu-tez-kurallari.md` dosyasındaki kuralları ana kontrol listesi olarak kullanır. Kısa özet:
-
-- A4 kâğıt.
-- Sol kenar 4 cm; diğer kenarlar 2.5 cm.
-- Sayfa numaraları altta ve ortada.
-- Ön kısım Romen rakamlarıyla; numaralama Özet sayfasında iii ile başlar.
-- Metin kısmı 1'den başlayarak Batı Arap rakamlarıyla numaralanır.
-- Times New Roman 12 punto; ana bölüm başlıkları 14 punto; dipnotlar 10 punto.
-- Ana metin 1.5 satır aralığı; özet, abstract, içindekiler, dizinler, kaynaklar ve öz geçmiş tek satır aralığı.
-- Ana bölüm başlıkları büyük harf ve koyu; alt başlıklar yalnızca baş harfleri büyük olacak biçimde koyu.
-- Paragraflar iki yana yaslı, 1 cm ilk satır girintili, paragraf sonrası 6 nk.
-- Tablo başlıkları tablonun üstünde; şekil başlıkları şeklin altında.
-- Şekil ve tablo numaraları bölüm numarasıyla başlar: `Şekil 2.1.`, `Tablo 3.2.`.
-- Denklem numaraları bölüm içinde başlar: `(1.1)`, `(2.1)`.
-
-## Kontrol akışı
-
-1. LaTeX dosyalarını keşfet.
-2. Şablonun komutlarını çıkar.
-3. OMÜ kural listesiyle karşılaştır.
-4. Sorunları kategoriye ayır:
-   - `format-critical`: teslimde sorun çıkarabilecek biçim hatası
-   - `template-risk`: şablon komutlarının yanlış kullanımı
-   - `latex-error`: derleme hatası oluşturabilecek sorun
-   - `consistency`: başlık/atıf/numara/tutarlılık sorunu
-   - `style`: küçük görünüm ve okunabilirlik sorunu
-5. Düzeltme önerilerini ver; kullanıcı isterse patch formatında sun.
-
-## Akademik biçim riski öncelikleri
-
-Teslim veya savunma sürecinde daha yüksek risk taşıyan noktaları önce raporla:
-
-- Zorunlu ön sayfaların eksikliği: kabul/onay, bilimsel etik beyanı, Türkçe özet, yabancı dilde özet, içindekiler, kaynaklar, öz geçmiş.
-- Sayfa numaralandırma ve ön/metin kısım ayrımı.
-- Kaynakça stili tutarsızlığı.
-- Şekil, tablo ve denklem numaralarının bölüm numarasıyla uyumsuzluğu.
-- Tablo/şekil başlığı konumu ve dizinlerde görünme durumu.
-- Ana bölüm ve alt başlık hiyerarşisinin bozulması.
-- Derleme hataları veya eksik dosyalar.
-- Şablon komutlarının yanlış kullanılması ya da silinmesi.
-
-## Çıktı sözleşmesi
+## Output Contract
 
 ```text
-## Şablon Keşfi
+## Template Discovery
 ...
 
-## OMÜ Kural Kontrolü
-| Kural | Durum | Kanıt / Dosya | Öneri |
+## OMU Rule Check
+| Rule | Status | Evidence / File | Recommendation |
 |---|---|---|---|
 
-## LaTeX Riskleri
-| Öncelik | Dosya | Sorun | Düzeltme |
+## LaTeX Risks
+| Priority | File | Issue | Fix |
 |---|---|---|---|
 
-## Güvenli Düzeltme Planı
+## Safe Fix Plan
 1. ...
 ```
 
-## Yasaklar
+## Prohibited
 
-- Şablonu baştan yazma.
-- `.cls` veya `.sty` dosyalarını gerekçesiz değiştirme.
-- Kapak, kabul/onay veya etik beyan komutlarını silme.
-- Atıf anahtarlarını otomatik yeniden adlandırma.
-- OMÜ kılavuzunda olmayan biçim kararlarını kesin kural gibi dayatma.
-- Güncel kılavuz veya resmi şablon görülmeden kurumsal kuralın değişmediğini varsayma.
-- Biçim kontrolünü içerik onayı gibi sunma.
+- Rewriting the template from scratch.
+- Changing `.cls` or `.sty` files without a clear reason.
+- Deleting cover, approval, or ethics-statement commands.
+- Automatically renaming citation keys.
+- Presenting non-OMU preferences as institutional rules.
+- Presenting a format check as content approval.

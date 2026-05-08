@@ -1,31 +1,31 @@
-# Tez Workflow Example
+# Thesis Workflow Example
 
-## 1. Giriş revizyonu
+## 1. Introduction Revision
 
 ```text
-Bu metni tez-yazimi-tr ile giriş bölümü olarak düzenle. Araştırma problemi, literatür boşluğu ve tez katkısı daha net olsun. Teknik anlamı değiştirme.
+Use tez-yazimi-tr to revise this text as a thesis introduction. Make the research problem, literature gap, and thesis contribution clearer. Do not change the technical meaning.
 ```
 
-## 2. İddia-kanıt kontrolü
+## 2. Claim-Evidence Check
 
 ```text
-Bu bölümdeki önemli iddiaları claim-evidence-audit ile çıkar. Hangi iddialar destekli, hangileri zayıf ya da fazla güçlü?
+Use claim-evidence-audit to extract the important claims in this section. Which claims are supported, weakly supported, or overstated?
 ```
 
-## 3. Jüri bakışı
+## 3. Committee View
 
 ```text
-Bu bölümü tez-denetim-tr ile savunma öncesi değerlendir. Bana kritik riskleri ve gelebilecek jüri sorularını tablo halinde ver.
+Use tez-denetim-tr to evaluate this section before defense. Return critical risks and likely committee questions in a table.
 ```
 
-## 4. Türkçe üslup
+## 4. Turkish Academic Style
 
 ```text
-Bu bölümü turkce-akademik-style-review ile daha doğal ve akademik Türkçeye çevir. Kaynakları ve teknik terimleri koru.
+Use turkce-akademik-style-review to make this section more natural and academically appropriate in Turkish. Preserve citations and technical terms.
 ```
 
-## 5. OMÜ LaTeX kontrolü
+## 5. OMU LaTeX Check
 
 ```text
-Bu proje dizinindeki LaTeX dosyalarını tez-latex-format-tr ile kontrol et. OMÜ kılavuzu ve yerel şablon komutları açısından riskleri çıkar.
+Use tez-latex-format-tr to inspect the LaTeX files in this project directory. Report risks against the OMU guide and local template commands.
 ```
