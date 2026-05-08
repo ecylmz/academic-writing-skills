@@ -18,9 +18,9 @@
         "CHANGELOG.md"
       ],
       "local_targets": [
-        ".agents/skills/academic-style-review-en/",
-        ".agents/skills/turkce-akademik-style-review/",
-        ".agents/skills/_shared/references/agent-neutral-skill-principles.md"
+        "skills/en/academic-style-review-en/",
+        "skills/tr/turkce-akademik-style-review/",
+        "skills/_shared/references/agent-neutral-skill-principles.md"
       ],
       "update_policy": "review-carefully",
       "risk_level": "high",
@@ -38,9 +38,9 @@
         "README.md"
       ],
       "local_targets": [
-        ".agents/skills/makale-yazimi-en/",
-        ".agents/skills/makale-denetim-en/",
-        ".agents/skills/claim-evidence-audit/"
+        "skills/en/makale-yazimi-en/",
+        "skills/en/makale-denetim-en/",
+        "skills/en/claim-evidence-audit/"
       ],
       "update_policy": "selective-port",
       "risk_level": "medium",
@@ -62,12 +62,12 @@
         "CHANGELOG.md"
       ],
       "local_targets": [
-        ".agents/skills/akademik-yazim-suite/",
-        ".agents/skills/tez-yazimi-tr/",
-        ".agents/skills/tez-denetim-tr/",
-        ".agents/skills/tez-latex-format-tr/",
-        ".agents/skills/citation-integrity-audit/",
-        ".agents/skills/claim-evidence-audit/"
+        "skills/tr/akademik-yazim-suite/",
+        "skills/tr/tez-yazimi-tr/",
+        "skills/tr/tez-denetim-tr/",
+        "skills/tr/tez-latex-format-tr/",
+        "skills/en/citation-integrity-audit/",
+        "skills/en/claim-evidence-audit/"
       ],
       "update_policy": "selective-port",
       "risk_level": "high",

@@ -1,13 +1,13 @@
 # Installation Guide
 
-Bu paket, herhangi bir proje dizinine `.agents/skills` yapısı olarak eklenmek üzere hazırlanmıştır.
+Bu paket, herhangi bir proje dizinine `skills/tr` ve `skills/en` yapısı olarak eklenmek üzere hazırlanmıştır.
 
 ## 1. Sadece Skill'leri Kurmak
 
 Mevcut çalışma projenizin kök dizininde:
 
 ```bash
-cp -R academic_writing_skill_suite/.agents .
+cp -R academic_writing_skill_suite/skills .
 cp academic_writing_skill_suite/AGENTS.md .
 ```
 
@@ -30,7 +30,7 @@ GitHub reposuna push ettikten sonra `.github/workflows/upstream-watch.yml` her a
 Kurulumdan sonra:
 
 ```bash
-python tools/check_skill_suite.py
+python3 tools/check_skill_suite.py
 ```
 
 Beklenen çıktı `status: ok` içeren bir JSON raporudur.
@@ -40,7 +40,7 @@ Beklenen çıktı `status: ok` içeren bir JSON raporudur.
 GitHub token verilirse rate limit daha yüksek olur:
 
 ```bash
-GITHUB_TOKEN=ghp_xxx python tools/check_upstream_updates.py \
+GITHUB_TOKEN=ghp_xxx python3 tools/check_upstream_updates.py \
   --sources .upstream/sources.json \
   --snapshot .upstream/snapshots/latest.json \
   --report .upstream/reports/upstream-report.md
@@ -69,7 +69,10 @@ OMÜ tez şablonu dosyalarını tez projenizin içinde tutmanız önerilir. `tez
 ```text
 thesis-project/
   AGENTS.md
-  .agents/skills/
+  skills/
+    tr/
+    en/
+    _shared/
   thesis.tex
   omu-thesis.cls
   references.bib

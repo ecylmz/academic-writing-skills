@@ -30,7 +30,7 @@ Tracked sources:
 2. `Master-cai/Research-Paper-Writing-Skills`
 3. `Imbad0202/academic-research-skills`
 
-The tracking system reports relevant upstream changes but does not merge or overwrite local files. All updates must be reviewed manually because this suite contains Turkish thesis writing adaptations, OMÜ thesis-format references, and software-engineering-specific academic writing rules.
+The tracking system reports relevant upstream changes but does not merge or overwrite local files. All updates must be reviewed manually because this suite contains Turkish thesis writing adaptations, OMÜ thesis-format references, and computer science / empirical software engineering aware academic writing rules that should remain usable across fields.
 
 When upstream content is ported into this suite, update this file with a short note describing:
 

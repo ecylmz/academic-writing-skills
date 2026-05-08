@@ -1,6 +1,6 @@
 # AGENTS.md — Academic Writing Skill Suite
 
-This repository contains an agent-neutral academic writing skill suite. It is designed to be copied into a project as `.agents/skills/<skill-name>` and used by any AI coding/writing agent that can read project instructions.
+This repository contains an agent-neutral academic writing skill suite. It is designed to be copied into a project as `skills/tr/<skill-name>` and `skills/en/<skill-name>` and used by any AI coding/writing agent that can read project instructions.
 
 The suite is not a single monolithic prompt. Each skill has a short `SKILL.md`, and longer rules live under `references/` and `templates/`. Agents must load only the files needed for the current task.
 
@@ -11,7 +11,7 @@ The suite is not a single monolithic prompt. Each skill has a short `SKILL.md`, 
 3. **Separate writing from verification.** Drafting skills improve structure and prose. Audit skills check claim-evidence alignment, citation integrity, and format compliance.
 4. **Use the narrowest relevant skill.** Do not load the whole suite when a section-specific skill is enough.
 5. **Treat Turkish thesis writing differently from English article writing.** Turkish thesis prose should be formal, clear, natural, and institutionally compliant; English article prose should follow international manuscript conventions.
-6. **Keep local adaptations.** This project adapts upstream academic-writing projects for Turkish thesis writing, OMÜ thesis formatting, and software engineering research. Do not blindly overwrite local files with upstream content.
+6. **Keep local adaptations.** This project adapts upstream academic-writing projects for Turkish thesis writing, OMÜ thesis formatting, and computer science / empirical software engineering aware research workflows without excluding other fields. Do not blindly overwrite local files with upstream content.
 7. **Do not auto-merge upstream updates.** Use `.upstream/` reports to decide whether to ignore, port, vendor, or defer changes.
 
 ## Skill Selection Guide
@@ -55,7 +55,7 @@ The suite is not a single monolithic prompt. Each skill has a short `SKILL.md`, 
 4. Run:
 
 ```bash
-python tools/check_skill_suite.py
+python3 tools/check_skill_suite.py
 ```
 
 5. Update `SOURCE_NOTES.md` if attribution or adaptation scope changes.
@@ -98,4 +98,4 @@ If the actual OMÜ template is present, preserve its commands and document struc
 
 ## File Ownership
 
-This repository intentionally keeps generated skills in `.agents/skills/`. Upstream tracking metadata lives in `.upstream/`. Do not mix upstream vendor files into skill directories unless a maintenance decision explicitly chooses `vendor`.
+This repository intentionally keeps generated skills in `skills/tr/` and `skills/en/`. Shared references and templates live in `skills/_shared/`. Upstream tracking metadata lives in `.upstream/`. Do not mix upstream vendor files into skill directories unless a maintenance decision explicitly chooses `vendor`.

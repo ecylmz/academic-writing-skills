@@ -12,19 +12,23 @@ Validation result:
 {
   "status": "ok",
   "skill_count": 10,
-  "file_count": 66,
-  "skills": [
-    "akademik-yazim-suite",
-    "tez-yazimi-tr",
-    "tez-denetim-tr",
-    "tez-latex-format-tr",
-    "makale-yazimi-en",
-    "makale-denetim-en",
-    "academic-style-review-en",
-    "turkce-akademik-style-review",
-    "claim-evidence-audit",
-    "citation-integrity-audit"
-  ],
+  "file_count": 75,
+  "skills": {
+    "tr": [
+      "akademik-yazim-suite",
+      "tez-yazimi-tr",
+      "tez-denetim-tr",
+      "tez-latex-format-tr",
+      "turkce-akademik-style-review"
+    ],
+    "en": [
+      "makale-yazimi-en",
+      "makale-denetim-en",
+      "academic-style-review-en",
+      "claim-evidence-audit",
+      "citation-integrity-audit"
+    ]
+  },
   "upstream_tracking": true,
   "agents_md": true
 }
@@ -32,10 +36,13 @@ Validation result:
 
 Checked items:
 
-- All 10 expected skill directories exist.
+- All 10 expected skill directories exist under `skills/tr` and `skills/en`.
 - Every skill has a `SKILL.md` file.
 - `SKILL.md` frontmatter names match directory names.
 - Local `references/` and `templates/` links mentioned in `SKILL.md` files resolve.
+- Shared resources under `skills/_shared` exist.
+- `skills/tr/README.md` exists.
+- `skills/en/README.md` exists.
 - `AGENTS.md` exists.
 - Upstream tracking files exist.
 - GitHub Actions workflow for monthly upstream checks exists.
