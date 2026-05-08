@@ -1,6 +1,6 @@
 ---
 name: tez-yazimi-tr
-description: Use for drafting or revising Turkish master's and doctoral thesis sections in clear, evidence-based, formal academic Turkish. Suitable for introductions, literature reviews, methods, findings, discussion, conclusions, abstracts, and transitions.
+description: Use for drafting, revising, or style-reviewing Turkish master's and doctoral thesis sections in clear, evidence-based, formal academic Turkish. Suitable for introductions, literature reviews, methods, findings, discussion, conclusions, abstracts, transitions, and Turkish academic style cleanup.
 ---
 
 # Turkish Thesis Writing
@@ -15,6 +15,14 @@ This skill supports Turkish thesis writing. The aim is not only smoother prose, 
 4. Give each paragraph one main message.
 5. Support important claims with sources, method details, experimental results, tables, figures, or clear reasoning.
 6. Keep Turkish academic language clear, moderate, and direct.
+
+## Modes
+
+| Mode | Use when | Output |
+|---|---|---|
+| `draft` | The user asks to write a thesis section from notes or evidence. | Mini outline, paragraph plan, draft text. |
+| `revise` | The user provides existing thesis prose to restructure or improve. | Reverse outline, revised text, review notes. |
+| `style-review` | The user asks to make Turkish academic prose natural, moderate, and less artificial. | Style issues, revised text, claim calibration notes. |
 
 ## Required Reference Files
 
@@ -31,6 +39,8 @@ Load only the files needed for the task:
 - `references/ozet-ve-abstract.md`
 - `references/iddia-kanit-tez.md`
 - `references/yazilim-muhendisligi-tezi.md`
+- `references/style-review/turkce-yapay-kaliplar.md`
+- `templates/turkce-style-audit-report.md`
 
 ## Workflow
 
@@ -47,6 +57,27 @@ Load only the files needed for the task:
 1. **Mini Outline**: section purpose, main message, paragraph roles.
 2. **Revised Text**: formal academic Turkish, appropriate section flow, preserved citations and technical terms.
 3. **Review Notes**: strengthened points, missing evidence, overstated claims, and the next recommended audit.
+
+For `style-review` mode, return:
+
+```text
+## Detected Style Issues
+| Location | Issue | Recommendation |
+|---|---|---|
+
+## Revised Text
+...
+
+## Preserved Technical Meaning
+- ...
+
+## Claim Calibration
+| Claim | Original strength | Recommended strength | Rationale |
+|---|---|---|---|
+
+## Remaining Risks
+- ...
+```
 
 ## Prohibited
 

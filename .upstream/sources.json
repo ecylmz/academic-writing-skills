@@ -18,8 +18,8 @@
         "CHANGELOG.md"
       ],
       "local_targets": [
-        "skills/en/academic-style-review-en/",
-        "skills/tr/turkce-akademik-style-review/",
+        "skills/en/paper-writing-en/",
+        "skills/tr/tez-yazimi-tr/",
         "skills/_shared/references/agent-neutral-skill-principles.md"
       ],
       "update_policy": "review-carefully",
@@ -38,9 +38,9 @@
         "README.md"
       ],
       "local_targets": [
-        "skills/en/makale-yazimi-en/",
-        "skills/en/makale-denetim-en/",
-        "skills/en/claim-evidence-audit/"
+        "skills/en/paper-writing-en/",
+        "skills/en/paper-review-en/",
+        "skills/en/research-integrity-audit/"
       ],
       "update_policy": "selective-port",
       "risk_level": "medium",
@@ -66,8 +66,7 @@
         "skills/tr/tez-yazimi-tr/",
         "skills/tr/tez-denetim-tr/",
         "skills/tr/tez-latex-format-tr/",
-        "skills/en/citation-integrity-audit/",
-        "skills/en/claim-evidence-audit/"
+        "skills/en/research-integrity-audit/"
       ],
       "update_policy": "selective-port",
       "risk_level": "high",

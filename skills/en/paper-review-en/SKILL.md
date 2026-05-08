@@ -1,5 +1,5 @@
 ---
-name: makale-denetim-en
+name: paper-review-en
 description: Reviewer-risk audit for English academic manuscripts. Simulates a structured peer-review process with editorial synthesis, methodology/domain/perspective review lenses, devil's-advocate challenge, contribution clarity, methodological rigor, evidence sufficiency, claim-evidence alignment, and revision roadmap.
 ---
 

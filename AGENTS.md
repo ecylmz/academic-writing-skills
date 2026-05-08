@@ -21,12 +21,12 @@ The suite is not a single monolithic prompt. Each skill has a short `SKILL.md`, 
 | “Write/revise my thesis section” | `tez-yazimi-tr` |
 | “Evaluate my thesis like a committee member” | `tez-denetim-tr` |
 | “Check against the OMU LaTeX template” | `tez-latex-format-tr` |
-| “Write/revise an English paper section” | `makale-yazimi-en` |
-| “Review my English manuscript like a reviewer” | `makale-denetim-en` |
-| “Clean AI-like English academic prose” | `academic-style-review-en` |
-| “Make this Turkish academic text natural and formal” | `turkce-akademik-style-review` |
-| “Are the claims aligned with the evidence?” | `claim-evidence-audit` |
-| “Check bibliography and citations” | `citation-integrity-audit` |
+| “Write/revise an English paper section” | `paper-writing-en` |
+| “Review my English manuscript like a reviewer” | `paper-review-en` |
+| “Clean AI-like English academic prose” | `paper-writing-en` in `style-review` mode |
+| “Make this Turkish academic text natural and formal” | `tez-yazimi-tr` in `style-review` mode |
+| “Are the claims aligned with the evidence?” | `research-integrity-audit` |
+| “Check bibliography and citations” | `research-integrity-audit` |
 | “Which skill should I use?” | `akademik-yazim-suite` |
 
 ## Recommended Workflows
@@ -34,18 +34,18 @@ The suite is not a single monolithic prompt. Each skill has a short `SKILL.md`, 
 ### Turkish Thesis Workflow
 
 1. `tez-yazimi-tr`: plan the section and draft/revise paragraph by paragraph.
-2. `claim-evidence-audit`: extract claims and check whether each claim is supported by thesis data or cited literature.
-3. `turkce-akademik-style-review`: remove artificial phrasing, vague praise, unnecessary meta-commentary, and translationese.
+2. `research-integrity-audit`: run `claim-evidence` mode to check whether each claim is supported by thesis data or cited literature.
+3. `tez-yazimi-tr`: run `style-review` mode to remove artificial phrasing, vague praise, unnecessary meta-commentary, and translationese.
 4. `tez-denetim-tr`: evaluate the section from a thesis jury perspective.
 5. `tez-latex-format-tr`: check OMU thesis formatting and LaTeX template compliance.
 
 ### English Article Workflow
 
-1. `makale-yazimi-en`: build the story, section outline, and paper paragraphs.
-2. `claim-evidence-audit`: check claim-evidence alignment.
-3. `citation-integrity-audit`: check citation/reference consistency.
-4. `academic-style-review-en`: remove AI-like academic writing patterns.
-5. `makale-denetim-en`: run reviewer-risk analysis.
+1. `paper-writing-en`: build the story, section outline, and paper paragraphs.
+2. `research-integrity-audit`: run `claim-evidence` mode.
+3. `research-integrity-audit`: run `citation-integrity` mode.
+4. `paper-writing-en`: run `style-review` mode.
+5. `paper-review-en`: run reviewer-risk analysis.
 
 ### Upstream Maintenance Workflow
 

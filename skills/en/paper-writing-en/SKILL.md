@@ -1,6 +1,6 @@
 ---
-name: makale-yazimi-en
-description: English research paper drafting and revision skill for Abstract, Introduction, Related Work, Method, Experiments, Results, Discussion, Conclusion, and reviewer-oriented presentation. Uses claim-evidence alignment, reverse outlining, and section-specific writing guides.
+name: paper-writing-en
+description: English research paper drafting, revision, and style-review skill for Abstract, Introduction, Related Work, Method, Experiments, Results, Discussion, Conclusion, and reviewer-oriented presentation. Uses claim-evidence alignment, reverse outlining, section-specific writing guides, and a no-new-facts style pass.
 ---
 
 # Research Paper Writing EN
@@ -17,6 +17,7 @@ Use this skill to draft or revise English academic manuscripts. The goal is not 
 - Conclusion and limitations.
 - Paragraph-level flow repair.
 - Claim-evidence mapping during revision.
+- Style-only review for vague claims, filler, AI-like phrasing, and terminology drift.
 
 ## Core workflow
 
@@ -29,6 +30,14 @@ Use this skill to draft or revise English academic manuscripts. The goal is not 
 7. Check claim-evidence alignment.
 8. Run reverse outlining.
 9. Produce a short reviewer-oriented self-review.
+
+## Modes
+
+| Mode | Use when | Output |
+|---|---|---|
+| `draft` | The user asks to write a section from notes or evidence. | Section outline, paragraph plan, draft text. |
+| `revise` | The user provides existing text to improve structure and clarity. | Reverse outline, revised text, claim-evidence notes. |
+| `style-review` | The user asks to clean academic English style without changing meaning. | Style audit, revised text, claim calibration notes. |
 
 ## Academic quality priorities
 
@@ -55,6 +64,9 @@ Load only the relevant reference file:
 - `references/paragraph-flow.md`
 - `references/computer-science-paper.md`
 - `references/reviewer-ready-writing.md`
+- `references/ai-writing-patterns.md`
+- `references/style-rule-checklist.md`
+- `templates/style-audit-report.md`
 
 ## Global principles
 
@@ -78,7 +90,25 @@ When drafting or revising, return:
 3. **Revised Text**: polished academic English.
 4. **Claim-Evidence Notes**: major claims and support status.
 5. **Reviewer Readiness Notes**: likely reviewer questions, missing evidence, overclaim, unclear method, weak transition.
-6. **Recommended Next Skill**: `claim-evidence-audit`, `citation-integrity-audit`, `academic-style-review-en`, or `makale-denetim-en`.
+6. **Recommended Next Skill**: `research-integrity-audit` or `paper-review-en`.
+
+For `style-review` mode, return:
+
+```text
+## Style Audit
+| Rule | Location | Issue | Revision strategy |
+|---|---|---|---|
+
+## Revised Text
+...
+
+## Claim Calibration Notes
+| Claim | Original strength | Recommended strength |
+|---|---|---|
+
+## Remaining Issues
+- ...
+```
 
 ## Hard constraints
 
@@ -89,3 +119,4 @@ When drafting or revising, return:
 - If evidence is missing, mark it as `[MATERIAL GAP]`.
 - Do not convert a reviewer-facing research paper into promotional or grant-style prose.
 - Do not smooth over methodological gaps with vague transition sentences.
+- Do not use style review to hide AI use or evade detection.

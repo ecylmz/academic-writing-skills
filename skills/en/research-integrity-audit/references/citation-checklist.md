@@ -6,7 +6,6 @@
 - Are multiple citations ordered according to the chosen style?
 - Are page numbers included for direct quotations when required?
 - Are author names and years consistent with the reference list?
-- Are Turkish conjunctions (`ve`, `vd.`) used consistently in Turkish text?
 
 ## Reference list checks
 

@@ -1,6 +1,6 @@
 # English Academic Writing Skills
 
-This directory contains skills for English research paper writing, reviewer-risk analysis, academic style review, claim-evidence auditing, and citation integrity checks.
+This directory contains skills for English research paper writing, reviewer-risk analysis, and research-integrity auditing.
 
 The goal is not generic polishing. The skills are designed to make a manuscript reviewer-readable, evidence-backed, methodologically defensible, and honest about its scope.
 
@@ -8,20 +8,19 @@ The goal is not generic polishing. The skills are designed to make a manuscript 
 
 | Need | Skill | Typical output |
 |---|---|---|
-| Draft or revise an English paper section | `makale-yazimi-en` | Section outline, paragraph role map, revised text, claim-evidence notes |
-| Simulate peer review or assess reviewer risk | `makale-denetim-en` | Reviewer lenses, risk matrix, likely decision, revision roadmap |
-| Clean academic English style without changing meaning | `academic-style-review-en` | Style audit, revised text, claim calibration notes |
-| Check whether claims are supported | `claim-evidence-audit` | Claim table, evidence status, high-risk claims, suggested rewrites |
-| Check citations, bibliography, and source support | `citation-integrity-audit` | Citation-reference table, source support risks, bibliography fixes |
+| Draft or revise an English paper section | `paper-writing-en` | Section outline, paragraph role map, revised text, claim-evidence notes |
+| Simulate peer review or assess reviewer risk | `paper-review-en` | Reviewer lenses, risk matrix, likely decision, revision roadmap |
+| Clean academic English style without changing meaning | `paper-writing-en` in `style-review` mode | Style audit, revised text, claim calibration notes |
+| Check whether claims or citations are supported | `research-integrity-audit` | Claim table, citation-reference table, evidence gaps, bibliography fixes |
 
 ## Recommended manuscript workflow
 
-1. `makale-yazimi-en`: Build or revise the section logic.
-2. `claim-evidence-audit`: Check whether major claims match the available evidence.
-3. `citation-integrity-audit`: Check citation-reference consistency and source support.
-4. `academic-style-review-en`: Clean style, vague language, overclaiming, and terminology drift.
-5. `makale-denetim-en`: Run reviewer-risk analysis before submission.
-6. `makale-denetim-en` in `re-review` mode: Check revised manuscript against reviewer comments and author response.
+1. `paper-writing-en`: Build or revise the section logic.
+2. `research-integrity-audit` in `claim-evidence` mode: Check whether major claims match the available evidence.
+3. `research-integrity-audit` in `citation-integrity` mode: Check citation-reference consistency and source support.
+4. `paper-writing-en` in `style-review` mode: Clean style, vague language, overclaiming, and terminology drift.
+5. `paper-review-en`: Run reviewer-risk analysis before submission.
+6. `paper-review-en` in `re-review` mode: Check revised manuscript against reviewer comments and author response.
 
 Use a narrower skill when the user asks for a narrow task. Do not run the whole workflow by default.
 
@@ -29,20 +28,20 @@ Use a narrower skill when the user asks for a narrow task. Do not run the whole 
 
 | User phrase | Skill |
 |---|---|
-| `write my introduction`, `revise related work`, `improve method section`, `rewrite abstract` | `makale-yazimi-en` |
-| `review my paper`, `simulate peer review`, `referee report`, `editorial decision`, `desk reject risk` | `makale-denetim-en` |
-| `quick review`, `first look`, `is this submission ready` | `makale-denetim-en` with `quick` mode |
-| `check methodology`, `protocol risk`, `statistics`, `reproducibility`, `leakage` | `makale-denetim-en` with `methodology-focus` mode |
-| `check revisions`, `response letter`, `did we address reviewers` | `makale-denetim-en` with `re-review` mode |
-| `AI-like`, `style cleanup`, `academic prose`, `remove filler`, `claim calibration` | `academic-style-review-en` |
-| `are claims supported`, `overclaim`, `claim-evidence`, `unsupported statement` | `claim-evidence-audit` |
-| `citation check`, `bibliography`, `BibTeX`, `DOI`, `source support`, `missing reference` | `citation-integrity-audit` |
+| `write my introduction`, `revise related work`, `improve method section`, `rewrite abstract` | `paper-writing-en` |
+| `review my paper`, `simulate peer review`, `referee report`, `editorial decision`, `desk reject risk` | `paper-review-en` |
+| `quick review`, `first look`, `is this submission ready` | `paper-review-en` with `quick` mode |
+| `check methodology`, `protocol risk`, `statistics`, `reproducibility`, `leakage` | `paper-review-en` with `methodology-focus` mode |
+| `check revisions`, `response letter`, `did we address reviewers` | `paper-review-en` with `re-review` mode |
+| `AI-like`, `style cleanup`, `academic prose`, `remove filler`, `claim calibration` | `paper-writing-en` with `style-review` mode |
+| `are claims supported`, `overclaim`, `claim-evidence`, `unsupported statement` | `research-integrity-audit` with `claim-evidence` mode |
+| `citation check`, `bibliography`, `BibTeX`, `DOI`, `source support`, `missing reference` | `research-integrity-audit` with `citation-integrity` mode |
 
 ## Review skill comparison with upstream
 
 The upstream `academic-paper-reviewer` skill from `Imbad0202/academic-research-skills` is broader than this local reviewer skill. It includes a full multi-agent journal simulation, EIC, multiple peer reviewers, devil's advocate, guided review, calibration mode, and formal editorial decision templates.
 
-This local `makale-denetim-en` is useful when:
+This local `paper-review-en` is useful when:
 
 - The manuscript is in computer science, empirical software engineering, AI/ML, software systems, HCI, data science, or another empirical/technical field.
 - The user needs a compact reviewer-risk audit rather than a large multi-agent simulation.
@@ -63,9 +62,9 @@ These local EN skills are adapted from three upstream sources without vendoring 
 
 | Upstream | Useful material found | Local adaptation |
 |---|---|---|
-| `Imbad0202/academic-research-skills` | `academic-paper`, `academic-paper-reviewer`, `academic-pipeline`, and `deep-research` skills; reviewer personas, editorial synthesis, claim verification, integrity gates, reproducibility audit, paper structure patterns | `makale-denetim-en` reviewer modes; `review-quality-framework.md`; `editorial-review-package.md`; claim verification checks |
-| `Master-cai/Research-Paper-Writing-Skills` | Section guides for Abstract, Introduction, Related Work, Method, Experiments, Conclusion; paper review checklist; paragraph flow / reverse outlining | `makale-yazimi-en` section workflow; reviewer-ready writing reference; stronger paragraph and self-review checks |
-| `yzhao062/agent-style` | Style-review skill, rule-based prose audit, no-new-facts revision invariant, reader-state and concrete-language rules | `academic-style-review-en`; `style-rule-checklist.md`; preserve-structure and no-new-facts constraints |
+| `Imbad0202/academic-research-skills` | `academic-paper`, `academic-paper-reviewer`, `academic-pipeline`, and `deep-research` skills; reviewer personas, editorial synthesis, claim verification, integrity gates, reproducibility audit, paper structure patterns | `paper-review-en` reviewer modes; `review-quality-framework.md`; `editorial-review-package.md`; claim verification checks |
+| `Master-cai/Research-Paper-Writing-Skills` | Section guides for Abstract, Introduction, Related Work, Method, Experiments, Conclusion; paper review checklist; paragraph flow / reverse outlining | `paper-writing-en` section workflow; reviewer-ready writing reference; stronger paragraph and self-review checks |
+| `yzhao062/agent-style` | Style-review skill, rule-based prose audit, no-new-facts revision invariant, reader-state and concrete-language rules | `paper-writing-en` style-review mode; `style-rule-checklist.md`; preserve-structure and no-new-facts constraints |
 
 When an upstream skill is broader and better suited to the user request, use it directly instead of forcing the local skill. The local skills are optimized for this suite's English research-paper workflow, with extra care for empirical computer science and software engineering but without excluding other academic fields.
 

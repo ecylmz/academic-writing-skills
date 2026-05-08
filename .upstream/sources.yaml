@@ -20,8 +20,8 @@ sources:
       - packages/npm/data/skills/style-review/
       - CHANGELOG.md
     local_targets:
-      - skills/en/academic-style-review-en/
-      - skills/tr/turkce-akademik-style-review/
+      - skills/en/paper-writing-en/
+      - skills/tr/tez-yazimi-tr/
       - skills/_shared/references/agent-neutral-skill-principles.md
     update_policy: review-carefully
     risk_level: high
@@ -37,9 +37,9 @@ sources:
       - research-paper-writing/templates/
       - README.md
     local_targets:
-      - skills/en/makale-yazimi-en/
-      - skills/en/makale-denetim-en/
-      - skills/en/claim-evidence-audit/
+      - skills/en/paper-writing-en/
+      - skills/en/paper-review-en/
+      - skills/en/research-integrity-audit/
     update_policy: selective-port
     risk_level: medium
     reason: Section-level paper writing guides and templates may improve. Port structure and checklists manually.
@@ -62,8 +62,7 @@ sources:
       - skills/tr/tez-yazimi-tr/
       - skills/tr/tez-denetim-tr/
       - skills/tr/tez-latex-format-tr/
-      - skills/en/citation-integrity-audit/
-      - skills/en/claim-evidence-audit/
+      - skills/en/research-integrity-audit/
     update_policy: selective-port
     risk_level: high
     reason: Large academic writing pipeline. Track architecture, integrity protocols, review gates, and shared schemas; adapt to Turkish thesis workflow manually.

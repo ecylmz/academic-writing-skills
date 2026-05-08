@@ -29,15 +29,12 @@ academic-writing-skills/
 | Skill | Language | Purpose |
 |---|---:|---|
 | `akademik-yazim-suite` | TR | Orchestrates skill selection for thesis, article, audit, citation, and style-review tasks. |
-| `tez-yazimi-tr` | TR | Drafts or revises Turkish thesis sections with thesis logic, evidence discipline, and formal academic Turkish. |
+| `tez-yazimi-tr` | TR | Drafts, revises, and style-reviews Turkish thesis sections with evidence discipline and formal academic Turkish. |
 | `tez-denetim-tr` | TR | Reviews a Turkish thesis from advisor, committee, and defense-readiness perspectives. |
 | `tez-latex-format-tr` | TR | Checks OMU thesis-format and local LaTeX-template compliance. |
-| `turkce-akademik-style-review` | TR | Revises Turkish academic prose for naturalness, precision, moderation, and claim calibration. |
-| `makale-yazimi-en` | EN | Drafts and revises English research paper sections. |
-| `makale-denetim-en` | EN | Reviews English manuscripts for reviewer risks. |
-| `academic-style-review-en` | EN | Removes AI-like English academic patterns, weak transitions, and unsupported emphasis. |
-| `claim-evidence-audit` | TR/EN | Maps claims to evidence and flags unsupported or overstated claims. |
-| `citation-integrity-audit` | TR/EN | Checks citation/reference consistency and unverifiable references. |
+| `paper-writing-en` | EN | Drafts, revises, and style-reviews English research paper sections. |
+| `paper-review-en` | EN | Reviews English manuscripts for reviewer risks. |
+| `research-integrity-audit` | TR/EN | Audits claim-evidence alignment, citation/reference consistency, source support, and bibliography quality. |
 
 ## Installation
 
@@ -67,18 +64,18 @@ Expected output is a JSON object with `"status": "ok"`.
 ## Recommended Turkish Thesis Workflow
 
 1. `tez-yazimi-tr`: build the section purpose, outline, paragraph roles, and first academic draft.
-2. `claim-evidence-audit`: match major claims with data, literature, method details, tables, or figures.
-3. `turkce-akademik-style-review`: remove artificial phrasing, vague generalizations, unnecessary emphasis, and translationese.
+2. `research-integrity-audit`: run `claim-evidence` mode for major claims and evidence gaps.
+3. `tez-yazimi-tr`: run `style-review` mode for artificial phrasing, vague generalizations, unnecessary emphasis, and translationese.
 4. `tez-denetim-tr`: identify committee questions, methodological gaps, defense risks, and revision priorities.
 5. `tez-latex-format-tr`: check OMU formatting, LaTeX commands, headings, tables, figures, equations, and references.
 
 ## Recommended English Article Workflow
 
-1. `makale-yazimi-en`: build the paper story, section outline, paragraph roles, and section draft.
-2. `claim-evidence-audit`: check claim-evidence alignment.
-3. `citation-integrity-audit`: check in-text citations, bibliography entries, and citation style.
-4. `academic-style-review-en`: remove AI-like phrasing, excessive transitions, weak claim calibration, and vague terms.
-5. `makale-denetim-en`: run reviewer-risk analysis.
+1. `paper-writing-en`: build the paper story, section outline, paragraph roles, and section draft.
+2. `research-integrity-audit`: run `claim-evidence` mode for claim-evidence alignment.
+3. `research-integrity-audit`: run `citation-integrity` mode for in-text citations, bibliography entries, and citation style.
+4. `paper-writing-en`: run `style-review` mode for AI-like phrasing, excessive transitions, weak claim calibration, and vague terms.
+5. `paper-review-en`: run reviewer-risk analysis.
 
 ## OMU Thesis and LaTeX Template Use
 

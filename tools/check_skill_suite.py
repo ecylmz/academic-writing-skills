@@ -10,14 +10,11 @@ expected_by_language = {
         "tez-yazimi-tr",
         "tez-denetim-tr",
         "tez-latex-format-tr",
-        "turkce-akademik-style-review",
     ],
     "en": [
-        "makale-yazimi-en",
-        "makale-denetim-en",
-        "academic-style-review-en",
-        "claim-evidence-audit",
-        "citation-integrity-audit",
+        "paper-writing-en",
+        "paper-review-en",
+        "research-integrity-audit",
     ],
 }
 expected = [skill for skills in expected_by_language.values() for skill in skills]

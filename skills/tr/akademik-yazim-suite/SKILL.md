@@ -12,18 +12,18 @@ This is an orchestrator skill. Actual drafting, review, or formatting work must 
 - Thesis section, introduction, literature, method, findings, discussion, conclusion, abstract, or Turkish thesis prose: choose `tez-yazimi-tr`.
 - Committee, defense, advisor view, risks, criticism, weak points, or readiness: choose `tez-denetim-tr`.
 - OMU, LaTeX, template, format, `.cls`, `.sty`, or `.tex`: choose `tez-latex-format-tr`.
-- Artificial Turkish, academic Turkish, style, translationese, naturalness, or simplification: choose `turkce-akademik-style-review`.
-- Claims, evidence, support, overclaim, or exaggeration: choose `claim-evidence-audit`.
-- Bibliography, citation, BibTeX, DOI, or references: choose `citation-integrity-audit`.
-- English paper section drafting or revision: choose `makale-yazimi-en`.
-- Reviewer-like English manuscript review: choose `makale-denetim-en`.
-- English AI-like academic prose cleanup: choose `academic-style-review-en`.
+- Artificial Turkish, academic Turkish, style, translationese, naturalness, or simplification: choose `tez-yazimi-tr` in `style-review` mode.
+- Claims, evidence, support, overclaim, or exaggeration: choose `research-integrity-audit` in `claim-evidence` mode.
+- Bibliography, citation, BibTeX, DOI, or references: choose `research-integrity-audit` in `citation-integrity` mode.
+- English paper section drafting or revision: choose `paper-writing-en`.
+- Reviewer-like English manuscript review: choose `paper-review-en`.
+- English AI-like academic prose cleanup: choose `paper-writing-en` in `style-review` mode.
 
 ## Recommended Workflows
 
-Turkish thesis: `tez-yazimi-tr` -> `claim-evidence-audit` -> `tez-denetim-tr` -> `turkce-akademik-style-review` -> `tez-latex-format-tr`.
+Turkish thesis: `tez-yazimi-tr` -> `research-integrity-audit` (`claim-evidence`) -> `tez-denetim-tr` -> `tez-yazimi-tr` (`style-review`) -> `tez-latex-format-tr`.
 
-English article: `makale-yazimi-en` -> `claim-evidence-audit` -> `makale-denetim-en` -> `academic-style-review-en` -> `citation-integrity-audit`.
+English article: `paper-writing-en` -> `research-integrity-audit` (`claim-evidence`) -> `paper-review-en` -> `paper-writing-en` (`style-review`) -> `research-integrity-audit` (`citation-integrity`).
 
 ## Rules
 

@@ -9,7 +9,7 @@ Use tez-yazimi-tr to revise this text as a thesis introduction. Make the researc
 ## 2. Claim-Evidence Check
 
 ```text
-Use claim-evidence-audit to extract the important claims in this section. Which claims are supported, weakly supported, or overstated?
+Use research-integrity-audit in claim-evidence mode to extract the important claims in this section. Which claims are supported, weakly supported, or overstated?
 ```
 
 ## 3. Committee View
@@ -21,7 +21,7 @@ Use tez-denetim-tr to evaluate this section before defense. Return critical risk
 ## 4. Turkish Academic Style
 
 ```text
-Use turkce-akademik-style-review to make this section more natural and academically appropriate in Turkish. Preserve citations and technical terms.
+Use tez-yazimi-tr in style-review mode to make this section more natural and academically appropriate in Turkish. Preserve citations and technical terms.
 ```
 
 ## 5. OMU LaTeX Check
