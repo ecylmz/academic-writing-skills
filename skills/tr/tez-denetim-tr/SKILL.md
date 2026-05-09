@@ -25,6 +25,15 @@ This skill reviews rather than drafts. Its purpose is to make weak points visibl
 - `P2`: clarity, flow, or presentation issue.
 - `P3`: local style, format, caption, or citation-style issue.
 
+## Required Reference Files
+
+Load only when needed:
+
+- `references/agent-neutral-skill-principles.md`
+- `references/claim-evidence-principles.md`
+- `templates/claim-evidence-map.md`
+- `templates/revision-report.md`
+
 ## Output Contract
 
 ```text

@@ -16,11 +16,10 @@
       "research-integrity-audit"
     ]
   },
-  "file_count": 70,
+  "file_count": 90,
   "major_components": [
     "skills/tr",
     "skills/en",
-    "skills/_shared",
     "AGENTS.md",
     ".upstream",
     ".github/workflows/upstream-watch.yml",

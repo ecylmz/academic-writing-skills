@@ -29,6 +29,8 @@ This skill supports Turkish thesis writing. The aim is not only smoother prose, 
 Load only the files needed for the task:
 
 - `references/tez-bolum-akisi.md`
+- `references/agent-neutral-skill-principles.md`
+- `references/claim-evidence-principles.md`
 - `references/akademik-kalite-kontrol.md`
 - `references/turkce-akademik-uslup.md`
 - `references/bolum-rehberi-giris.md`
@@ -40,6 +42,9 @@ Load only the files needed for the task:
 - `references/iddia-kanit-tez.md`
 - `references/yazilim-muhendisligi-tezi.md`
 - `references/style-review/turkce-yapay-kaliplar.md`
+- `templates/reverse-outline.md`
+- `templates/revision-report.md`
+- `templates/claim-evidence-map.md`
 - `templates/turkce-style-audit-report.md`
 
 ## Workflow

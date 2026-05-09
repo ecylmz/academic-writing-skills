@@ -14,8 +14,7 @@ academic-writing-skills/
 ├── PROJECT_MANIFEST.json
 ├── skills/
 │   ├── tr/
-│   ├── en/
-│   └── _shared/
+│   └── en/
 ├── .upstream/
 ├── .github/workflows/upstream-watch.yml
 ├── examples/
@@ -84,6 +83,8 @@ Expected output is a JSON object with `"status": "ok"`.
 ## Claim-Evidence Discipline
 
 Every strong academic claim must be supported by the study's own evidence or verified literature. Unsupported claims should be narrowed, marked for verification, or removed.
+
+Shared principles and templates are intentionally copied into the skills that use them. There is no central `skills/_shared` directory, so each skill remains self-contained when copied into another project.
 
 ## Upstream Tracking
 

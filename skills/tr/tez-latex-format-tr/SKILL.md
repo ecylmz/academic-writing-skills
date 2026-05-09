@@ -16,6 +16,8 @@ This skill focuses on format, LaTeX template compliance, and OMU thesis rules ra
 5. If the template and guide differ, report the difference instead of making a definitive institutional claim.
 6. Do not rewrite the main `.tex` file unless the user asks.
 
+Load `references/agent-neutral-skill-principles.md` only when general agent-neutral operation or file protection rules are relevant to the format check.
+
 ## Local Template Discovery
 
 Search for main `.tex` files, `.cls`, `.sty`, `.bib`, build files, chapter folders, and figure/table folders. Report the main file, class/style files, bibliography file, chapter files, build method, and template-specific commands.

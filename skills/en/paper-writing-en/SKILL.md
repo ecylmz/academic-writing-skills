@@ -56,6 +56,8 @@ Prioritize reviewer readability and defensible claims over polished phrasing:
 Load only the relevant reference file:
 
 - `references/abstract.md`
+- `references/agent-neutral-skill-principles.md`
+- `references/claim-evidence-principles.md`
 - `references/introduction.md`
 - `references/related-work.md`
 - `references/method.md`
@@ -66,6 +68,9 @@ Load only the relevant reference file:
 - `references/reviewer-ready-writing.md`
 - `references/ai-writing-patterns.md`
 - `references/style-rule-checklist.md`
+- `templates/reverse-outline.md`
+- `templates/revision-report.md`
+- `templates/claim-evidence-map.md`
 - `templates/style-audit-report.md`
 
 ## Global principles

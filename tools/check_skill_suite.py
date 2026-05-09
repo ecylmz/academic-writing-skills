@@ -55,15 +55,54 @@ for language, skills in expected_by_language.items():
         if f"name: {skill}" not in text:
             errors.append(f"Frontmatter name mismatch: {skill}")
 
-for rel in [
-    "references/agent-neutral-skill-principles.md",
-    "references/claim-evidence-principles.md",
-    "templates/claim-evidence-map.md",
-    "templates/reverse-outline.md",
-    "templates/revision-report.md",
-]:
-    if not (skills_root / "_shared" / rel).exists():
-        errors.append(f"Missing shared resource: skills/_shared/{rel}")
+required_skill_resources = {
+    ("tr", "akademik-yazim-suite"): [
+        "references/agent-neutral-skill-principles.md",
+    ],
+    ("tr", "tez-yazimi-tr"): [
+        "references/agent-neutral-skill-principles.md",
+        "references/claim-evidence-principles.md",
+        "templates/claim-evidence-map.md",
+        "templates/reverse-outline.md",
+        "templates/revision-report.md",
+    ],
+    ("tr", "tez-denetim-tr"): [
+        "references/agent-neutral-skill-principles.md",
+        "references/claim-evidence-principles.md",
+        "templates/claim-evidence-map.md",
+        "templates/revision-report.md",
+    ],
+    ("tr", "tez-latex-format-tr"): [
+        "references/agent-neutral-skill-principles.md",
+    ],
+    ("en", "paper-writing-en"): [
+        "references/agent-neutral-skill-principles.md",
+        "references/claim-evidence-principles.md",
+        "templates/claim-evidence-map.md",
+        "templates/reverse-outline.md",
+        "templates/revision-report.md",
+    ],
+    ("en", "paper-review-en"): [
+        "references/agent-neutral-skill-principles.md",
+        "references/claim-evidence-principles.md",
+        "templates/claim-evidence-map.md",
+        "templates/revision-report.md",
+    ],
+    ("en", "research-integrity-audit"): [
+        "references/agent-neutral-skill-principles.md",
+        "references/claim-evidence-principles.md",
+        "templates/claim-evidence-map.md",
+        "templates/revision-report.md",
+    ],
+}
+
+for (language, skill), resources in required_skill_resources.items():
+    for rel in resources:
+        if not (skills_root / language / skill / rel).exists():
+            errors.append(f"Missing skill resource: skills/{language}/{skill}/{rel}")
+
+if (skills_root / "_shared").exists():
+    errors.append("skills/_shared should not exist; shared resources must live inside the skills that use them")
 
 # Check referenced local files in SKILL.md when written as references/... or templates/...
 for language, skills in expected_by_language.items():

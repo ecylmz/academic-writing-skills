@@ -27,6 +27,7 @@ English article: `paper-writing-en` -> `research-integrity-audit` (`claim-eviden
 
 ## Rules
 
+- Load `references/agent-neutral-skill-principles.md` when the user asks how the suite should be applied across agents or projects.
 - Do not draft directly; choose the relevant sub-skill.
 - If multiple jobs are requested, explain the order and identify the first skill to apply.
 - Do not invent missing data, tables, sources, results, or institutional rules.

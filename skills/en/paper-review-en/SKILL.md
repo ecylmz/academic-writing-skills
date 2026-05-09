@@ -144,9 +144,13 @@ Scores are ordinal signals, not predictions of venue acceptance. A single fatal 
 Load these only when needed:
 
 - `references/reviewer-risk-rubric.md`
+- `references/agent-neutral-skill-principles.md`
+- `references/claim-evidence-principles.md`
 - `references/computer-science-review.md`
 - `references/review-quality-framework.md`
 - `templates/editorial-review-package.md`
+- `templates/claim-evidence-map.md`
+- `templates/revision-report.md`
 
 ## Output contract
 

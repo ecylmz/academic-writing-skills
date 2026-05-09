@@ -20,7 +20,7 @@
       "local_targets": [
         "skills/en/paper-writing-en/",
         "skills/tr/tez-yazimi-tr/",
-        "skills/_shared/references/agent-neutral-skill-principles.md"
+        "skills/en/paper-review-en/"
       ],
       "update_policy": "review-carefully",
       "risk_level": "high",

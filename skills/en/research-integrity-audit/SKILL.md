@@ -46,10 +46,13 @@ This skill merges the former `research-integrity-audit` and `research-integrity-
 Load only when needed:
 
 - `references/claim-taxonomy.md`
+- `references/agent-neutral-skill-principles.md`
+- `references/claim-evidence-principles.md`
 - `references/claim-verification-protocol.md`
 - `references/citation-checklist.md`
 - `templates/claim-evidence-map.md`
 - `templates/citation-audit-report.md`
+- `templates/revision-report.md`
 
 ## Output Contract
 
