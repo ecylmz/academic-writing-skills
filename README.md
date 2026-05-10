@@ -30,9 +30,11 @@ academic-writing-skills/
 | `tez-yazimi-tr` | TR | Drafts, revises, and style-reviews Turkish thesis sections with evidence discipline and formal academic Turkish. |
 | `tez-denetim-tr` | TR | Reviews a Turkish thesis from advisor, committee, and defense-readiness perspectives. |
 | `tez-latex-format-tr` | TR | Checks OMU thesis-format and local LaTeX-template compliance. |
+| `humanizer-tr` | TR | Removes Turkish-specific artificial phrasing, translationese, and generic AI-output patterns while preserving meaning and academic integrity. |
 | `paper-writing-en` | EN | Drafts, revises, and style-reviews English research paper sections. |
 | `paper-review-en` | EN | Reviews English manuscripts for reviewer risks. |
 | `research-integrity-audit` | TR/EN | Audits claim-evidence alignment, citation/reference consistency, source support, and bibliography quality. |
+| `humanizer` | EN | Removes generic AI-output patterns and calibrates voice while preserving meaning, evidence, and academic integrity. |
 
 ## Installation
 
@@ -66,8 +68,9 @@ Expected output is a JSON object with `"status": "ok"`.
 1. `tez-yazimi-tr`: build the section purpose, outline, paragraph roles, and first academic draft.
 2. `research-integrity-audit`: run `claim-evidence` mode for major claims and evidence gaps.
 3. `tez-yazimi-tr`: run `style-review` mode for artificial phrasing, vague generalizations, unnecessary emphasis, and translationese.
-4. `tez-denetim-tr`: identify committee questions, methodological gaps, defense risks, and revision priorities.
-5. `tez-latex-format-tr`: check OMU formatting, LaTeX commands, headings, tables, figures, equations, and references.
+4. `humanizer-tr`: optionally run a final Turkish naturalness pass when the prose still sounds translated, bureaucratic, or mechanically AI-written.
+5. `tez-denetim-tr`: identify committee questions, methodological gaps, defense risks, and revision priorities.
+6. `tez-latex-format-tr`: check OMU formatting, LaTeX commands, headings, tables, figures, equations, and references.
 
 ## Recommended English Article Workflow
 
@@ -75,7 +78,8 @@ Expected output is a JSON object with `"status": "ok"`.
 2. `research-integrity-audit`: run `claim-evidence` mode for claim-evidence alignment.
 3. `research-integrity-audit`: run `citation-integrity` mode for in-text citations, bibliography entries, and citation style.
 4. `paper-writing-en`: run `style-review` mode for AI-like phrasing, excessive transitions, weak claim calibration, and vague terms.
-5. `paper-review-en`: run reviewer-risk analysis.
+5. `humanizer`: optionally run a final naturalness and voice pass when prose still sounds generic or formulaic.
+6. `paper-review-en`: run reviewer-risk analysis.
 
 ## OMU Thesis and LaTeX Template Use
 

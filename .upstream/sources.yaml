@@ -65,3 +65,19 @@ sources:
     update_policy: selective-port
     risk_level: high
     reason: Large academic writing pipeline. Track architecture, integrity protocols, review gates, and shared schemas; adapt to Turkish thesis workflow manually.
+
+  - name: humanizer
+    repo: blader/humanizer
+    branch: main
+    homepage: https://github.com/blader/humanizer
+    watch_paths:
+      - SKILL.md
+      - README.md
+      - LICENSE
+      - WARP.md
+    local_targets:
+      - skills/en/humanizer/
+      - skills/tr/humanizer-tr/
+    update_policy: selective-port
+    risk_level: medium
+    reason: Naturalness and AI-output pattern guidance may change. Port selectively and preserve this suite's academic integrity boundaries.

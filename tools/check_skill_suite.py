@@ -9,11 +9,13 @@ expected_by_language = {
         "tez-yazimi-tr",
         "tez-denetim-tr",
         "tez-latex-format-tr",
+        "humanizer-tr",
     ],
     "en": [
         "paper-writing-en",
         "paper-review-en",
         "research-integrity-audit",
+        "humanizer",
     ],
 }
 expected = [skill for skills in expected_by_language.values() for skill in skills]
@@ -84,6 +86,10 @@ required_skill_resources = {
     ("tr", "tez-latex-format-tr"): [
         "references/agent-neutral-skill-principles.md",
     ],
+    ("tr", "humanizer-tr"): [
+        "LICENSE",
+        "references/turkce-dogallastirma-kaliplari.md",
+    ],
     ("en", "paper-writing-en"): [
         "references/agent-neutral-skill-principles.md",
         "references/claim-evidence-principles.md",
@@ -102,6 +108,10 @@ required_skill_resources = {
         "references/claim-evidence-principles.md",
         "templates/claim-evidence-map.md",
         "templates/revision-report.md",
+    ],
+    ("en", "humanizer"): [
+        "LICENSE",
+        "references/humanizer-patterns.md",
     ],
 }
 
@@ -156,6 +166,7 @@ if sources_path.exists():
             "yzhao062/agent-style",
             "Master-cai/Research-Paper-Writing-Skills",
             "Imbad0202/academic-research-skills",
+            "blader/humanizer",
         ]:
             if repo not in repos:
                 errors.append(f"Upstream repo missing from sources.json: {repo}")

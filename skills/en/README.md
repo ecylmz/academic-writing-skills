@@ -1,6 +1,6 @@
 # English Academic Writing Skills
 
-This directory contains skills for English research paper writing, reviewer-risk analysis, and research-integrity auditing.
+This directory contains skills for English research paper writing, reviewer-risk analysis, research-integrity auditing, and naturalness revision.
 
 The goal is not generic polishing. The skills are designed to make a manuscript reviewer-readable, evidence-backed, methodologically defensible, and honest about its scope.
 
@@ -12,6 +12,7 @@ The goal is not generic polishing. The skills are designed to make a manuscript 
 | Simulate peer review or assess reviewer risk | `paper-review-en` | Reviewer lenses, risk matrix, likely decision, revision roadmap |
 | Clean academic English style without changing meaning | `paper-writing-en` in `style-review` mode | Style audit, revised text, claim calibration notes |
 | Check whether claims or citations are supported | `research-integrity-audit` | Claim table, citation-reference table, evidence gaps, bibliography fixes |
+| Remove generic AI-output patterns or match a supplied voice sample | `humanizer` | Pattern notes, draft rewrite, final tell-check, final rewrite, integrity notes |
 
 ## Recommended manuscript workflow
 
@@ -19,8 +20,9 @@ The goal is not generic polishing. The skills are designed to make a manuscript 
 2. `research-integrity-audit` in `claim-evidence` mode: Check whether major claims match the available evidence.
 3. `research-integrity-audit` in `citation-integrity` mode: Check citation-reference consistency and source support.
 4. `paper-writing-en` in `style-review` mode: Clean style, vague language, overclaiming, and terminology drift.
-5. `paper-review-en`: Run reviewer-risk analysis before submission.
-6. `paper-review-en` in `re-review` mode: Check revised manuscript against reviewer comments and author response.
+5. `humanizer`: Run a final naturalness and voice pass if the text still sounds generic, padded, or mechanically AI-written.
+6. `paper-review-en`: Run reviewer-risk analysis before submission.
+7. `paper-review-en` in `re-review` mode: Check revised manuscript against reviewer comments and author response.
 
 Use a narrower skill when the user asks for a narrow task. Do not run the whole workflow by default.
 
@@ -34,6 +36,7 @@ Use a narrower skill when the user asks for a narrow task. Do not run the whole 
 | `check methodology`, `protocol risk`, `statistics`, `reproducibility`, `leakage` | `paper-review-en` with `methodology-focus` mode |
 | `check revisions`, `response letter`, `did we address reviewers` | `paper-review-en` with `re-review` mode |
 | `AI-like`, `style cleanup`, `academic prose`, `remove filler`, `claim calibration` | `paper-writing-en` with `style-review` mode |
+| `humanize`, `natural voice`, `sounds AI-generated`, `match my writing style`, `make this less generic` | `humanizer` |
 | `are claims supported`, `overclaim`, `claim-evidence`, `unsupported statement` | `research-integrity-audit` with `claim-evidence` mode |
 | `citation check`, `bibliography`, `BibTeX`, `DOI`, `source support`, `missing reference` | `research-integrity-audit` with `citation-integrity` mode |
 
@@ -65,6 +68,7 @@ These local EN skills are adapted from three upstream sources without vendoring 
 | `Imbad0202/academic-research-skills` | `academic-paper`, `academic-paper-reviewer`, `academic-pipeline`, and `deep-research` skills; reviewer personas, editorial synthesis, claim verification, integrity gates, reproducibility audit, paper structure patterns | `paper-review-en` reviewer modes; `review-quality-framework.md`; `editorial-review-package.md`; claim verification checks |
 | `Master-cai/Research-Paper-Writing-Skills` | Section guides for Abstract, Introduction, Related Work, Method, Experiments, Conclusion; paper review checklist; paragraph flow / reverse outlining | `paper-writing-en` section workflow; reviewer-ready writing reference; stronger paragraph and self-review checks |
 | `yzhao062/agent-style` | Style-review skill, rule-based prose audit, no-new-facts revision invariant, reader-state and concrete-language rules | `paper-writing-en` style-review mode; `style-rule-checklist.md`; preserve-structure and no-new-facts constraints |
+| `blader/humanizer` | Naturalness revision, voice calibration, AI-output pattern checklist, final tell-check pass | `humanizer` skill; `humanizer-patterns.md`; explicit integrity boundaries for academic use |
 
 When an upstream skill is broader and better suited to the user request, use it directly instead of forcing the local skill. The local skills are optimized for this suite's English research-paper workflow, with extra care for empirical computer science and software engineering but without excluding other academic fields.
 
@@ -90,3 +94,4 @@ If material is missing, mark it as `[MATERIAL GAP]`, `requires verification`, or
 - Do not treat fluent prose as evidence of research quality.
 - Do not mark source support as verified unless the source or relevant passage is available.
 - Do not let numerical scores override fatal validity issues.
+- Do not use naturalness revision to conceal AI involvement, evade AI-detection systems, or make unsupported content look more credible.

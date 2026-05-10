@@ -21,9 +21,11 @@ The suite is not a single monolithic prompt. Each skill has a short `SKILL.md`, 
 | “Write/revise my thesis section” | `tez-yazimi-tr` |
 | “Evaluate my thesis like a committee member” | `tez-denetim-tr` |
 | “Check against the OMU LaTeX template” | `tez-latex-format-tr` |
+| “Humanize this Turkish text / make it sound natural” | `humanizer-tr` |
 | “Write/revise an English paper section” | `paper-writing-en` |
 | “Review my English manuscript like a reviewer” | `paper-review-en` |
 | “Clean AI-like English academic prose” | `paper-writing-en` in `style-review` mode |
+| “Humanize this English text / match my writing style” | `humanizer` |
 | “Make this Turkish academic text natural and formal” | `tez-yazimi-tr` in `style-review` mode |
 | “Are the claims aligned with the evidence?” | `research-integrity-audit` |
 | “Check bibliography and citations” | `research-integrity-audit` |
@@ -35,8 +37,9 @@ The suite is not a single monolithic prompt. Each skill has a short `SKILL.md`, 
 1. `tez-yazimi-tr`: plan the section and draft/revise paragraph by paragraph.
 2. `research-integrity-audit`: run `claim-evidence` mode to check whether each claim is supported by thesis data or cited literature.
 3. `tez-yazimi-tr`: run `style-review` mode to remove artificial phrasing, vague praise, unnecessary meta-commentary, and translationese.
-4. `tez-denetim-tr`: evaluate the section from a thesis jury perspective.
-5. `tez-latex-format-tr`: check OMU thesis formatting and LaTeX template compliance.
+4. `humanizer-tr`: optionally run a final Turkish naturalness pass when the prose still sounds translated, bureaucratic, or mechanically AI-written.
+5. `tez-denetim-tr`: evaluate the section from a thesis jury perspective.
+6. `tez-latex-format-tr`: check OMU thesis formatting and LaTeX template compliance.
 
 `research-integrity-audit` is stored under `skills/en` but is language-independent. Turkish-only project copies must include it when claim-evidence or citation checks are part of the workflow.
 
@@ -46,7 +49,8 @@ The suite is not a single monolithic prompt. Each skill has a short `SKILL.md`, 
 2. `research-integrity-audit`: run `claim-evidence` mode.
 3. `research-integrity-audit`: run `citation-integrity` mode.
 4. `paper-writing-en`: run `style-review` mode.
-5. `paper-review-en`: run reviewer-risk analysis.
+5. `humanizer`: optionally run a final naturalness and voice pass when the prose still sounds generic or mechanically AI-written.
+6. `paper-review-en`: run reviewer-risk analysis.
 
 ### Upstream Maintenance Workflow
 
