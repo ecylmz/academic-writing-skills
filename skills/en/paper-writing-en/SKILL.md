@@ -93,7 +93,7 @@ When drafting or revising, return:
 1. **Section Outline**: 3-7 bullets.
 2. **Paragraph Role Map**: paragraph role, message, evidence.
 3. **Revised Text**: polished academic English.
-4. **Claim-Evidence Notes**: major claims and support status.
+4. **Claim-Evidence Notes**: table with claim, evidence location, status, and required action for major factual, empirical, quantitative, comparative, causal, or contribution claims.
 5. **Reviewer Readiness Notes**: likely reviewer questions, missing evidence, overclaim, unclear method, weak transition.
 6. **Recommended Next Skill**: `research-integrity-audit` or `paper-review-en`.
 
@@ -101,8 +101,8 @@ For `style-review` mode, return:
 
 ```text
 ## Style Audit
-| Rule | Location | Issue | Revision strategy |
-|---|---|---|---|
+| Location | Issue Type | Original Expression | Suggested Expression | Rationale |
+|---|---|---|---|---|
 
 ## Revised Text
 ...

@@ -12,6 +12,8 @@ Use tez-yazimi-tr to revise this text as a thesis introduction. Make the researc
 Use research-integrity-audit in claim-evidence mode to extract the important claims in this section. Which claims are supported, weakly supported, or overstated?
 ```
 
+Note: `research-integrity-audit` is stored under `skills/en`, but it is language-independent and should be copied with Turkish thesis workflows when evidence or citation checks are needed.
+
 ## 3. Committee View
 
 ```text

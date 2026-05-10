@@ -36,6 +36,19 @@ required_project_files = [
 
 errors = []
 
+def stable_files():
+    files = []
+    for path in root.rglob("*"):
+        if not path.is_file():
+            continue
+        rel = path.relative_to(root)
+        if ".git" in rel.parts:
+            continue
+        if path.name == ".DS_Store":
+            continue
+        files.append(str(rel))
+    return sorted(files)
+
 for rel in required_project_files:
     if not (root / rel).exists():
         errors.append(f"Missing project file: {rel}")
@@ -100,6 +113,27 @@ for (language, skill), resources in required_skill_resources.items():
 if (skills_root / "_shared").exists():
     errors.append("skills/_shared should not exist; shared resources must live inside the skills that use them")
 
+stale_scan_roots = [
+    root / "AGENTS.md",
+    root / "README.md",
+    root / "SOURCE_NOTES.md",
+    root / "PROJECT_MANIFEST.json",
+    root / ".upstream",
+    root / "examples",
+    root / "skills",
+]
+for scan_root in stale_scan_roots:
+    paths = [scan_root] if scan_root.is_file() else list(scan_root.rglob("*"))
+    for path in paths:
+        if not path.is_file() or path.name == ".DS_Store":
+            continue
+        rel = path.relative_to(root)
+        text = path.read_text(encoding="utf-8")
+        if "akademik-yazim-suite" in text:
+            errors.append(f"Stale removed skill reference in {rel}: akademik-yazim-suite")
+        if "skills/_shared/" in text:
+            errors.append(f"Stale shared resource path in {rel}: skills/_shared/")
+
 # Check referenced local files in SKILL.md when written as references/... or templates/...
 for language, skills in expected_by_language.items():
     for skill in skills:
@@ -125,8 +159,44 @@ if sources_path.exists():
         ]:
             if repo not in repos:
                 errors.append(f"Upstream repo missing from sources.json: {repo}")
+        for item in sources.get("sources", []):
+            for target in item.get("local_targets", []):
+                target_path = root / target
+                if target.endswith("/"):
+                    if not target_path.is_dir():
+                        errors.append(f"Missing upstream local target directory: {target}")
+                elif not target_path.exists():
+                    errors.append(f"Missing upstream local target file: {target}")
+        yaml_path = root / ".upstream" / "sources.yaml"
+        if yaml_path.exists():
+            yaml_text = yaml_path.read_text(encoding="utf-8")
+            for repo in repos:
+                if repo not in yaml_text:
+                    errors.append(f"Upstream repo missing from sources.yaml: {repo}")
+            for item in sources.get("sources", []):
+                for target in item.get("local_targets", []):
+                    if target not in yaml_text:
+                        errors.append(f"Upstream local target missing from sources.yaml: {target}")
     except json.JSONDecodeError as exc:
         errors.append(f"Invalid .upstream/sources.json: {exc}")
+
+manifest_path = root / "PROJECT_MANIFEST.json"
+if manifest_path.exists():
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        if manifest.get("skill_count") != len(expected):
+            errors.append(
+                f"PROJECT_MANIFEST skill_count mismatch: {manifest.get('skill_count')} != {len(expected)}"
+            )
+        if manifest.get("skills") != expected_by_language:
+            errors.append("PROJECT_MANIFEST skills list does not match validator expectations")
+        computed_file_count = len(stable_files())
+        if manifest.get("file_count") != computed_file_count:
+            errors.append(
+                f"PROJECT_MANIFEST file_count mismatch: {manifest.get('file_count')} != {computed_file_count}"
+            )
+    except json.JSONDecodeError as exc:
+        errors.append(f"Invalid PROJECT_MANIFEST.json: {exc}")
 
 if errors:
     print("FAILED")
@@ -134,11 +204,7 @@ if errors:
         print("-", e)
     sys.exit(1)
 
-files = [
-    str(p.relative_to(root))
-    for p in root.rglob("*")
-    if p.is_file() and ".git" not in p.relative_to(root).parts
-]
+files = stable_files()
 print(json.dumps({
     "status": "ok",
     "skill_count": len(expected),

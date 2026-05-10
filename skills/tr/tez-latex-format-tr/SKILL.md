@@ -37,8 +37,8 @@ Search for main `.tex` files, `.cls`, `.sty`, `.bib`, build files, chapter folde
 ...
 
 ## OMU Rule Check
-| Rule | Status | Evidence / File | Recommendation |
-|---|---|---|---|
+| Rule | Status | Rule source | Evidence / File | Recommendation |
+|---|---|---|---|---|
 
 ## LaTeX Risks
 | Priority | File | Issue | Fix |

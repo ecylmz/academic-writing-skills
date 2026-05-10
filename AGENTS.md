@@ -38,6 +38,8 @@ The suite is not a single monolithic prompt. Each skill has a short `SKILL.md`, 
 4. `tez-denetim-tr`: evaluate the section from a thesis jury perspective.
 5. `tez-latex-format-tr`: check OMU thesis formatting and LaTeX template compliance.
 
+`research-integrity-audit` is stored under `skills/en` but is language-independent. Turkish-only project copies must include it when claim-evidence or citation checks are part of the workflow.
+
 ### English Article Workflow
 
 1. `paper-writing-en`: build the story, section outline, and paper paragraphs.
@@ -97,4 +99,4 @@ If the actual OMU template is present, preserve its commands and document struct
 
 ## File Ownership
 
-This repository intentionally keeps generated skills in `skills/tr/` and `skills/en/`. Shared principles and templates are duplicated into the individual skills that use them; do not recreate a central `skills/_shared/` directory. Upstream tracking metadata lives in `.upstream/`. Do not mix upstream vendor files into skill directories unless a maintenance decision explicitly chooses `vendor`.
+This repository intentionally keeps generated skills in `skills/tr/` and `skills/en/`. Shared principles and templates are duplicated into the individual skills that use them; do not recreate a central shared-skill directory. Upstream tracking metadata lives in `.upstream/`. Do not mix upstream vendor files into skill directories unless a maintenance decision explicitly chooses `vendor`.

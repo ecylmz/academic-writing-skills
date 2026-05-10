@@ -125,6 +125,15 @@ Mark as `P3`:
 
 - Local wording, caption clarity, citation style, formatting, or minor consistency issue.
 
+Severity vocabulary:
+
+| Priority | Review severity | Meaning |
+|---|---|---|
+| `P0` | Critical | Likely rejection or fatal validity issue unless resolved |
+| `P1` | Major | Substantial revision needed for credibility, evidence, or contribution clarity |
+| `P2` | Minor | Clarity, completeness, or organization issue that affects reviewability |
+| `P3` | Cosmetic | Local wording, formatting, or presentation issue |
+
 ## Scoring rubric
 
 When the user asks for scores, use 0-100 scores with descriptors:
@@ -160,6 +169,7 @@ Mode:
 Paper type:
 Target venue assumption:
 Material gaps:
+Confidence scale: high / medium / low, based on manuscript completeness and evidence availability.
 
 ## Reviewer Panel / Lenses
 | Lens | Focus | Confidence | Main concern |
@@ -168,9 +178,21 @@ Material gaps:
 ## Overall Assessment and Likely Decision
 ...
 
+## Strengths
+| Strength | Evidence in manuscript | Why it matters |
+|---|---|---|
+
 ## Reviewer-Risk Matrix
 | Priority | Location | Issue | Why it matters | Revision |
 |---|---|---|---|---|
+
+## Required Revisions
+| Severity | Location | Required fix | Acceptance criterion |
+|---|---|---|---|
+
+## Suggested Revisions
+| Priority | Location | Suggestion | Expected improvement |
+|---|---|---|---|
 
 ## Claim-Evidence Audit
 | Claim | Evidence | Status | Action |

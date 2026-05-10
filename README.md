@@ -43,6 +43,8 @@ cp -R skills /path/to/your/project/
 cp AGENTS.md /path/to/your/project/
 ```
 
+For a Turkish-thesis-only installation, copy `skills/tr/` plus `skills/en/research-integrity-audit/` if the workflow will include claim-evidence or citation-integrity checks. The audit skill is language-independent even though it lives under `skills/en`.
+
 If the target project should also track upstream sources, copy the maintenance files:
 
 ```bash

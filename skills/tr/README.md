@@ -11,7 +11,7 @@ This directory contains skills for Turkish thesis writing, thesis review, OMU La
 | Check OMU thesis template, LaTeX commands, and formatting rules | `tez-latex-format-tr` | Template discovery, OMU rule checks, LaTeX risks |
 | Make Turkish academic prose natural, moderate, and consistent | `tez-yazimi-tr` in `style-review` mode | Style issues, revised text, claim calibration, remaining risks |
 
-Although `research-integrity-audit` lives under `skills/en`, it is a language-independent audit skill and can be used in Turkish thesis workflows.
+Although `research-integrity-audit` lives under `skills/en`, it is a language-independent audit skill and can be used in Turkish thesis workflows. If only Turkish thesis skills are copied into another project, also copy `skills/en/research-integrity-audit/` when claim-evidence or citation checks are needed.
 
 ## Recommended Thesis Workflow
 

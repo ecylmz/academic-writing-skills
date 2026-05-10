@@ -14,16 +14,16 @@ This skill reviews rather than drafts. Its purpose is to make weak points visibl
 3. Literature positioning: thematic organization, demonstrated gap, and direct link to the thesis claim.
 4. Method and reproducibility: data, sample, tools, parameters, protocol, analysis steps, ethics/data access, and version traceability.
 5. Findings and interpretation: separation of results from interpretation, alternatives, limitations, and unexpected findings.
-6. Format and guide alignment: chapter order, headings, abstracts, lists, captions, appendices, and OMU expectations.
+6. Thesis structure and handoff risks: chapter order, missing required academic sections, and format issues only when they affect review readiness; detailed OMU/LaTeX checks belong to `tez-latex-format-tr`.
 7. Source and evidence discipline: citations that support the claim, reference consistency, and result-table alignment.
 8. Validity threats: internal, external, construct, and conclusion validity tied to this thesis.
 
 ## Risk Priority
 
-- `P0`: critical issue that must be fixed before submission/defense.
-- `P1`: important issue requiring substantial revision.
-- `P2`: clarity, flow, or presentation issue.
-- `P3`: local style, format, caption, or citation-style issue.
+- `P0`: submission/defense blocker, such as unsupported central contribution, missing method/data needed for reproducibility, unverifiable core result, fatal claim-evidence mismatch, or thesis structure that prevents evaluation.
+- `P1`: major revision risk, such as weak literature gap, incomplete method detail, broad contribution scope, missing validity discussion, or important citation/source-support problem.
+- `P2`: moderate clarity or organization risk, such as paragraph flow, terminology drift, weak table/figure explanation, or unclear link between research question and finding.
+- `P3`: local style, caption, citation-style, or minor formatting issue that does not affect the thesis's academic defensibility.
 
 ## Required Reference Files
 
@@ -41,8 +41,8 @@ Load only when needed:
 <brief direct assessment>
 
 ## Critical Risks
-| Priority | Location | Issue | Why it matters | Recommended fix |
-|---|---|---|---|---|
+| Priority | Location | Issue | Evidence used / not verified | Why it matters | Recommended fix |
+|---|---|---|---|---|---|
 
 ## Claim-Evidence Check
 | Claim | Current support | Status | Action |

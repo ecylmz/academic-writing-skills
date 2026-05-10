@@ -20,32 +20,22 @@ This skill supports Turkish thesis writing. The aim is not only smoother prose, 
 
 | Mode | Use when | Output |
 |---|---|---|
-| `draft` | The user asks to write a thesis section from notes or evidence. | Mini outline, paragraph plan, draft text. |
+| `draft` | The user asks to write a thesis section from supplied notes, data, source passages, or method/result material. | Mini outline, paragraph plan, draft text with `[MATERIAL GAP]` placeholders where evidence is missing. |
 | `revise` | The user provides existing thesis prose to restructure or improve. | Reverse outline, revised text, review notes. |
 | `style-review` | The user asks to make Turkish academic prose natural, moderate, and less artificial. | Style issues, revised text, claim calibration notes. |
 
-## Required Reference Files
+## Reference Loading
 
-Load only the files needed for the task:
+Load the narrowest set of files for the task:
 
-- `references/tez-bolum-akisi.md`
-- `references/agent-neutral-skill-principles.md`
-- `references/claim-evidence-principles.md`
-- `references/akademik-kalite-kontrol.md`
-- `references/turkce-akademik-uslup.md`
-- `references/bolum-rehberi-giris.md`
-- `references/bolum-rehberi-literatur.md`
-- `references/bolum-rehberi-yontem.md`
-- `references/bolum-rehberi-bulgular-tartisma.md`
-- `references/bolum-rehberi-sonuc.md`
-- `references/ozet-ve-abstract.md`
-- `references/iddia-kanit-tez.md`
-- `references/yazilim-muhendisligi-tezi.md`
-- `references/style-review/turkce-yapay-kaliplar.md`
-- `templates/reverse-outline.md`
-- `templates/revision-report.md`
-- `templates/claim-evidence-map.md`
-- `templates/turkce-style-audit-report.md`
+| Need | Files |
+|---|---|
+| Always | `references/agent-neutral-skill-principles.md`, `references/tez-bolum-akisi.md`, `references/akademik-kalite-kontrol.md` |
+| Draft/revise | `templates/reverse-outline.md`, `templates/revision-report.md` |
+| Claim-evidence check inside a writing task | `references/claim-evidence-principles.md`, `references/iddia-kanit-tez.md`, `templates/claim-evidence-map.md` |
+| Style review | `references/turkce-akademik-uslup.md`, `references/style-review/turkce-yapay-kaliplar.md`, `templates/turkce-style-audit-report.md` |
+| Section-specific guidance | Load only the relevant file: `references/bolum-rehberi-giris.md`, `references/bolum-rehberi-literatur.md`, `references/bolum-rehberi-yontem.md`, `references/bolum-rehberi-bulgular-tartisma.md`, `references/bolum-rehberi-sonuc.md`, or `references/ozet-ve-abstract.md` |
+| CS/SE thesis | `references/yazilim-muhendisligi-tezi.md` |
 
 ## Workflow
 
@@ -61,7 +51,9 @@ Load only the files needed for the task:
 
 1. **Mini Outline**: section purpose, main message, paragraph roles.
 2. **Revised Text**: formal academic Turkish, appropriate section flow, preserved citations and technical terms.
-3. **Review Notes**: strengthened points, missing evidence, overstated claims, and the next recommended audit.
+3. **Claim-Evidence Map**: include when the text contains factual, empirical, quantitative, comparative, causal, or contribution claims; include claim, support location, status, and action.
+4. **Review Notes**: strengthened points, missing evidence, overstated claims, and the next recommended audit.
+5. **Remaining Risks**: short list of reviewer/jury risks, especially unsupported claims, unclear method, weak scope, or missing source passages.
 
 For `style-review` mode, return:
 

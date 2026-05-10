@@ -7,7 +7,7 @@ description: Academic integrity audit for claim-evidence alignment, citation/ref
 
 Use this skill when the user asks whether claims are supported, whether a manuscript overclaims, whether citations and references are consistent, or whether sources actually support the claims near them.
 
-This skill merges the former `research-integrity-audit` and `research-integrity-audit` scopes. They were separate files, but they usually operate on the same evidence chain: claim -> support -> citation/reference -> source verification.
+This skill combines claim-evidence, citation/reference, source-support, and bibliography-quality checks because they usually operate on the same evidence chain: claim -> support -> citation/reference -> source verification.
 
 ## Modes
 
@@ -40,6 +40,18 @@ This skill merges the former `research-integrity-audit` and `research-integrity-
    - Missing year, title, venue, DOI, URL, access date, version, release, or commit when required.
    - Inconsistent capitalization or entry type.
    - Unstable webpages or non-authoritative sources.
+
+## Status Labels
+
+Use a consistent label set for each mode:
+
+| Mode | Primary labels | Notes |
+|---|---|---|
+| `claim-evidence` | `supported`, `weak`, `missing`, `overclaimed`, `misaligned`, `requires source check` | Use for manuscript claim tables and rewrite actions. |
+| `citation-integrity` | `OK`, `MISSING_REFERENCE`, `ORPHAN_REFERENCE`, `STYLE_INCONSISTENCY`, `SOURCE_DOES_NOT_SUPPORT`, `NEEDS_FULL_TEXT_CHECK`, `INCOMPLETE_METADATA` | Use for citation/reference and bibliography checks. |
+| Source support verdicts | `verified`, `minor distortion`, `major distortion`, `unsupported`, `unverifiable access`, `scope mismatch` | Use only when applying `references/claim-verification-protocol.md` to exact source passages or evidence artifacts. |
+
+If a source is unavailable, do not use `supported`; use `requires source check`, `NEEDS_FULL_TEXT_CHECK`, or `unverifiable access`, depending on the active mode.
 
 ## References
 
