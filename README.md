@@ -27,7 +27,6 @@ academic-writing-skills/
 
 | Skill | Language | Purpose |
 |---|---:|---|
-| `akademik-yazim-suite` | TR | Orchestrates skill selection for thesis, article, audit, citation, and style-review tasks. |
 | `tez-yazimi-tr` | TR | Drafts, revises, and style-reviews Turkish thesis sections with evidence discipline and formal academic Turkish. |
 | `tez-denetim-tr` | TR | Reviews a Turkish thesis from advisor, committee, and defense-readiness perspectives. |
 | `tez-latex-format-tr` | TR | Checks OMU thesis-format and local LaTeX-template compliance. |

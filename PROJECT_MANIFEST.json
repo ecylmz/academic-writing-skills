@@ -2,10 +2,9 @@
   "name": "academic_writing_skill_suite",
   "version": "0.2.0",
   "description": "Agent-neutral modular skill suite for Turkish thesis writing, English research paper writing, research integrity audit, OMU LaTeX thesis formatting, and upstream maintenance tracking.",
-  "skill_count": 7,
+  "skill_count": 6,
   "skills": {
     "tr": [
-      "akademik-yazim-suite",
       "tez-yazimi-tr",
       "tez-denetim-tr",
       "tez-latex-format-tr"
@@ -16,7 +15,7 @@
       "research-integrity-audit"
     ]
   },
-  "file_count": 90,
+  "file_count": 89,
   "major_components": [
     "skills/tr",
     "skills/en",

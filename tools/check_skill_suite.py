@@ -6,7 +6,6 @@ root = Path(__file__).resolve().parents[1]
 skills_root = root / "skills"
 expected_by_language = {
     "tr": [
-        "akademik-yazim-suite",
         "tez-yazimi-tr",
         "tez-denetim-tr",
         "tez-latex-format-tr",
@@ -56,9 +55,6 @@ for language, skills in expected_by_language.items():
             errors.append(f"Frontmatter name mismatch: {skill}")
 
 required_skill_resources = {
-    ("tr", "akademik-yazim-suite"): [
-        "references/agent-neutral-skill-principles.md",
-    ],
     ("tr", "tez-yazimi-tr"): [
         "references/agent-neutral-skill-principles.md",
         "references/claim-evidence-principles.md",

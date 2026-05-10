@@ -62,7 +62,6 @@
         "CHANGELOG.md"
       ],
       "local_targets": [
-        "skills/tr/akademik-yazim-suite/",
         "skills/tr/tez-yazimi-tr/",
         "skills/tr/tez-denetim-tr/",
         "skills/tr/tez-latex-format-tr/",

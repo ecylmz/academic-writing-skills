@@ -27,7 +27,6 @@ The suite is not a single monolithic prompt. Each skill has a short `SKILL.md`, 
 | “Make this Turkish academic text natural and formal” | `tez-yazimi-tr` in `style-review` mode |
 | “Are the claims aligned with the evidence?” | `research-integrity-audit` |
 | “Check bibliography and citations” | `research-integrity-audit` |
-| “Which skill should I use?” | `akademik-yazim-suite` |
 
 ## Recommended Workflows
 
